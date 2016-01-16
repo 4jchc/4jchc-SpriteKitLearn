@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		962D48CD1C4A4FB000A8C0E4 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = 962D48CB1C4A4FB000A8C0E4 /* background-music-aac.caf */; };
+		962D48CE1C4A4FB000A8C0E4 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = 962D48CC1C4A4FB000A8C0E4 /* pew-pew-lei.caf */; };
 		96DA30F41C48E8D000DAEA2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA30F31C48E8D000DAEA2A /* AppDelegate.swift */; };
 		96DA30F61C48E8D000DAEA2A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 96DA30F51C48E8D000DAEA2A /* GameScene.sks */; };
 		96DA30F81C48E8D000DAEA2A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA30F71C48E8D000DAEA2A /* GameScene.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		962D48CB1C4A4FB000A8C0E4 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
+		962D48CC1C4A4FB000A8C0E4 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
 		96DA30F01C48E8D000DAEA2A /* 忍者无敌.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "忍者无敌.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96DA30F31C48E8D000DAEA2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96DA30F51C48E8D000DAEA2A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -82,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		962D48CA1C4A4FB000A8C0E4 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				962D48CB1C4A4FB000A8C0E4 /* background-music-aac.caf */,
+				962D48CC1C4A4FB000A8C0E4 /* pew-pew-lei.caf */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		96DA30E71C48E8D000DAEA2A = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +118,7 @@
 		96DA30F21C48E8D000DAEA2A /* 忍者无敌 */ = {
 			isa = PBXGroup;
 			children = (
+				962D48CA1C4A4FB000A8C0E4 /* Sounds */,
 				96DA31271C491A1400DAEA2A /* sprites.atlas */,
 				96DA30F31C48E8D000DAEA2A /* AppDelegate.swift */,
 				96DA30F51C48E8D000DAEA2A /* GameScene.sks */,
@@ -241,8 +255,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				962D48CE1C4A4FB000A8C0E4 /* pew-pew-lei.caf in Resources */,
 				96DA31281C491A1400DAEA2A /* sprites.atlas in Resources */,
 				96DA30F61C48E8D000DAEA2A /* GameScene.sks in Resources */,
+				962D48CD1C4A4FB000A8C0E4 /* background-music-aac.caf in Resources */,
 				96DA31021C48E8D000DAEA2A /* LaunchScreen.storyboard in Resources */,
 				96DA30FF1C48E8D000DAEA2A /* Assets.xcassets in Resources */,
 				96DA30FD1C48E8D000DAEA2A /* Main.storyboard in Resources */,
@@ -502,6 +518,7 @@
 				96DA311E1C48E8D000DAEA2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96DA311F1C48E8D000DAEA2A /* Build configuration list for PBXNativeTarget "忍者无敌Tests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +527,7 @@
 				96DA31211C48E8D000DAEA2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96DA31221C48E8D000DAEA2A /* Build configuration list for PBXNativeTarget "忍者无敌UITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +536,7 @@
 				96DA31241C48E8D000DAEA2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -53,8 +53,7 @@ class GameViewController: UIViewController {
         // 2. 判断场景是否已经存在
         if ((skView.scene == nil)) {
             // 以下两个属性用于在开发过程中跟踪使用，应用发布时需要取消
-            // 显示屏幕刷新率(帧/秒)
-            
+            // 显示屏幕刷新率(帧/秒)     
             skView.showsFPS = true
             // 显示当前场景中的节点数量
             skView.showsNodeCount = true
@@ -94,7 +93,7 @@ class GameViewController: UIViewController {
         return true
     }
     
-
+    
 
 
 }
