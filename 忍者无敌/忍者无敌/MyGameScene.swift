@@ -13,7 +13,6 @@ class MyGameScene: SKScene {
     
     var _player:SKSpriteNode!
     // 妖怪数组
-    
     var _monsters:NSMutableArray!
     // 飞镖数组
     var _projectiles:NSMutableArray!
@@ -130,6 +129,8 @@ class MyGameScene: SKScene {
 
         _projectiles.addObject(projectile)
         
+        print("💗【\(self.classForCoder)】 - 【\(__FUNCTION__)】- \(__LINE__)\n****   \(_projectiles.count)")
+        
         // 4. 设置飞镖的动作
         // 时间 = 距离 / 速度
         let p:CGPoint = CGPointMake(to.x - from.x, to.y - from.y);
@@ -144,7 +145,7 @@ class MyGameScene: SKScene {
         weak var weakSelf = self
         projectile.runAction(move) { () -> Void in
             projectile.removeFromParent()
-            weakSelf?._projectiles.removeObject(projectile)
+            weakSelf!._projectiles.removeObject(projectile)
 
         }
     }
@@ -175,13 +176,69 @@ class MyGameScene: SKScene {
         
         // 5. 让妖怪节点运行动作
         weak var weakSelf = self
-        weakSelf?._monsters.removeObject(monster)
         monster.runAction(move) { () -> Void in
             
             // 6. 从场景中删除妖怪
             monster.removeFromParent()
-            weakSelf?._monsters.removeObject(monster)
+            weakSelf!._monsters.removeObject(monster)
         }
     
+    }
+    
+    //MARK: - 场景每次渲染时会调用
+    override func update(currentTime: CFTimeInterval) {
+        /* Called before each frame is rendered */
+        /** 在呈现每个帧之前调用 */
+        // 可以实现碰撞检测
+        NSLog("%d %d", _projectiles.count, _monsters.count);
+        
+        // 1. 循环遍历飞镖数组
+        let projectileSet:NSMutableSet = NSMutableSet()
+        
+        for projectile in _projectiles{
+            
+            
+            let projectile = projectile as! SKSpriteNode
+            // 2.新建临时可变数组
+            let monsterSet:NSMutableSet = NSMutableSet()
+            // 3. 遍历妖怪数组
+            for monster in _monsters{
+                let monster = monster as! SKSpriteNode
+                // 3. 碰撞检测
+                if (CGRectIntersectsRect(monster.frame, projectile.frame)) {
+                    // 发生碰撞，记录住要删除的妖怪
+                    monsterSet.addObject(monster)
+                }
+                
+            }
+            
+            
+            // 4. 遍历要删除的妖怪集合，从场景上删除
+            for monster in monsterSet{
+                let monster = monster as! SKSpriteNode
+                _monsters.removeObject(monster)
+                
+                // 4.1 妖怪被干掉的动画
+                let rotate:SKAction = SKAction.rotateToAngle(CGFloat(-M_PI_2) , duration: 0.1)
+                monster.runAction(rotate, completion: { () -> Void in
+                    monster.removeFromParent()
+                })
+                
+            }
+            
+            
+            // 5. 要删除的飞镖，如果要删除的妖怪集合中存在数据，表示该飞镖也需要被删除
+            if (monsterSet.count > 0) {
+                projectileSet.addObject(projectile)
+            }
+        }
+        // 6. 删除所有碰撞的飞镖
+        for projectile in projectileSet{
+            let projectile = projectile as! SKSpriteNode
+            //先从父节点删除然后在删除数组中的元素
+            projectile.removeFromParent()
+            _projectiles.removeObject(projectile)
+            
+        }
     }
 }
