@@ -28,7 +28,7 @@ class MyGameScene: SKScene {
         _projectiles = NSMutableArray()
         
         // 1. 实例化忍者
-        let player:SKSpriteNode = SKSpriteNode(imageNamed: "player")
+        let player:SKSpriteNode = SKSpriteNode(imageNamed: "")
         
         // 2. 设置忍者的位置
         player.position = CGPointMake(player.size.width / 2, self.size.height / 2);

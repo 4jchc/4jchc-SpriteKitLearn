@@ -8,36 +8,46 @@
 
 import UIKit
 import SpriteKit
-
+import AVFoundation
 class GameViewController: UIViewController {
-
-
+    var _bgMusicPlayer:AVAudioPlayer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        if let scene = GameScene(fileNamed:"GameScene") {
-//            
-//            // 1. 配置SKView
-//            let skView = self.view as! SKView
-//            // 以下两个属性用于在开发过程中跟踪使用，应用发布时需要取消
-//            // 显示屏幕刷新率(帧/秒)
-//            
-//            skView.showsFPS = true
-//            // 显示当前场景中的节点数量
-//            skView.showsNodeCount = true
-//            NSLog("%s - %@", __FUNCTION__, NSStringFromCGSize(self.view.bounds.size));
-//            
-//            /* Sprite Kit applies additional optimizations to improve rendering performance */
-//            //精灵套件适用于额外的优化，以提高渲染性能
-//            skView.ignoresSiblingOrder = true
-//            
-//            /* Set the scale mode to scale to fit the window */
-//            /** 设置缩放模式以适应窗口 */
-//            // 2. 创建和配置场景
-//            scene.scaleMode = .AspectFill
-//            // 3. 展现场景
-//            skView.presentScene(scene)
-//        }
+        
+        // 1. 实例化播放背景音乐
+        let url:NSURL = NSBundle.mainBundle().URLForResource("background-music-aac", withExtension: "caf")!
+        
+        _bgMusicPlayer = try! AVAudioPlayer.init(contentsOfURL: url)
+        //准备播放
+        _bgMusicPlayer.prepareToPlay()
+        //循环播放
+        _bgMusicPlayer.numberOfLoops = -1;
+        
+        _bgMusicPlayer.play()
+        //        if let scene = GameScene(fileNamed:"GameScene") {
+        //
+        //            // 1. 配置SKView
+        //            let skView = self.view as! SKView
+        //            // 以下两个属性用于在开发过程中跟踪使用，应用发布时需要取消
+        //            // 显示屏幕刷新率(帧/秒)
+        //
+        //            skView.showsFPS = true
+        //            // 显示当前场景中的节点数量
+        //            skView.showsNodeCount = true
+        //            NSLog("%s - %@", __FUNCTION__, NSStringFromCGSize(self.view.bounds.size));
+        //
+        //            /* Sprite Kit applies additional optimizations to improve rendering performance */
+        //            //精灵套件适用于额外的优化，以提高渲染性能
+        //            skView.ignoresSiblingOrder = true
+        //
+        //            /* Set the scale mode to scale to fit the window */
+        //            /** 设置缩放模式以适应窗口 */
+        //            // 2. 创建和配置场景
+        //            scene.scaleMode = .AspectFill
+        //            // 3. 展现场景
+        //            skView.presentScene(scene)
+        //        }
     }
     
     
@@ -53,7 +63,7 @@ class GameViewController: UIViewController {
         // 2. 判断场景是否已经存在
         if ((skView.scene == nil)) {
             // 以下两个属性用于在开发过程中跟踪使用，应用发布时需要取消
-            // 显示屏幕刷新率(帧/秒)     
+            // 显示屏幕刷新率(帧/秒)
             skView.showsFPS = true
             // 显示当前场景中的节点数量
             skView.showsNodeCount = true
@@ -70,11 +80,11 @@ class GameViewController: UIViewController {
     }
     
     
-
+    
     override func shouldAutorotate() -> Bool {
         return true
     }
-
+    
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
             return .AllButUpsideDown
@@ -82,7 +92,7 @@ class GameViewController: UIViewController {
             return .All
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
@@ -94,6 +104,6 @@ class GameViewController: UIViewController {
     }
     
     
-
-
+    
+    
 }
