@@ -69,8 +69,6 @@ class GameScene: SKScene {
         // 4. 让小妖精发呆动画
         self.goblinRepeatActionWith(_idleFrames!)
 
-    
-
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -91,24 +89,35 @@ class GameScene: SKScene {
 
         // 4. 设置角度
         _goblin!.zRotation = angle - CGFloat(M_PI_2)
-  
-
         
-//        for touch in touches {
-//            let location = touch.locationInNode(self)
-//            
-//            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-//            
-//            sprite.xScale = 0.1
-//            sprite.yScale = 0.1
-//            sprite.position = location
-//            
-//            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-//            
-//            sprite.runAction(SKAction.repeatActionForever(action))
-//            
-//            self.addChild(sprite)
-//        }
+        // 5. 计算行走距离和时间 平方根Square root
+        let distance:CGFloat = CGFloat(sqrtf(Float(offset.x * offset.x)  + Float(offset.y * offset.y)))
+        let volcity:CGFloat = self.size.height / 2
+        let duration:NSTimeInterval = Double(distance / volcity)
+        
+        
+        // 6. 设置小妖精的动画
+        // 1) 删除发呆动画
+        _goblin!.removeAllActions()
+        
+        // 2) 添加行走动画
+        self.goblinRepeatActionWith(_walkFrames!)
+        
+        // 3) 添加移动动画
+        let move:SKAction = SKAction.moveTo(location, duration: duration)
+        
+        // 4) 移动完成恢复发呆状态
+        
+        weak var weakSelf = self
+        
+       
+        _goblin?.runAction(move, completion: { () -> Void in
+            
+             weakSelf?._goblin?.removeAllActions()
+             weakSelf?.goblinRepeatActionWith(weakSelf!._idleFrames!)
+        })
+        
+  
     }
 
     override func update(currentTime: CFTimeInterval) {
