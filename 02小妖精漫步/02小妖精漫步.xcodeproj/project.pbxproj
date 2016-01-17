@@ -16,6 +16,8 @@
 		96E19A871C4B4DF900EDEC6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96E19A851C4B4DF900EDEC6C /* LaunchScreen.storyboard */; };
 		96E19A921C4B4DF900EDEC6C /* _2_____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E19A911C4B4DF900EDEC6C /* _2_____Tests.swift */; };
 		96E19A9D1C4B4DF900EDEC6C /* _2_____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E19A9C1C4B4DF900EDEC6C /* _2_____UITests.swift */; };
+		96E19AAC1C4B4FA000EDEC6C /* Goblin_Idle.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 96E19AAA1C4B4FA000EDEC6C /* Goblin_Idle.atlas */; };
+		96E19AAD1C4B4FA000EDEC6C /* Goblin_Walk.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 96E19AAB1C4B4FA000EDEC6C /* Goblin_Walk.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		96E19A981C4B4DF900EDEC6C /* 02小妖精漫步UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "02小妖精漫步UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E19A9C1C4B4DF900EDEC6C /* _2_____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_2_____UITests.swift"; sourceTree = "<group>"; };
 		96E19A9E1C4B4DF900EDEC6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96E19AAA1C4B4FA000EDEC6C /* Goblin_Idle.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Goblin_Idle.atlas; sourceTree = "<group>"; };
+		96E19AAB1C4B4FA000EDEC6C /* Goblin_Walk.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Goblin_Walk.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 		96E19A771C4B4DF900EDEC6C /* 02小妖精漫步 */ = {
 			isa = PBXGroup;
 			children = (
+				96E19AAA1C4B4FA000EDEC6C /* Goblin_Idle.atlas */,
+				96E19AAB1C4B4FA000EDEC6C /* Goblin_Walk.atlas */,
 				96E19A781C4B4DF900EDEC6C /* AppDelegate.swift */,
 				96E19A7A1C4B4DF900EDEC6C /* GameScene.sks */,
 				96E19A7C1C4B4DF900EDEC6C /* GameScene.swift */,
@@ -239,9 +245,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				96E19A7B1C4B4DF900EDEC6C /* GameScene.sks in Resources */,
+				96E19AAD1C4B4FA000EDEC6C /* Goblin_Walk.atlas in Resources */,
 				96E19A871C4B4DF900EDEC6C /* LaunchScreen.storyboard in Resources */,
 				96E19A841C4B4DF900EDEC6C /* Assets.xcassets in Resources */,
 				96E19A821C4B4DF900EDEC6C /* Main.storyboard in Resources */,
+				96E19AAC1C4B4FA000EDEC6C /* Goblin_Idle.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
