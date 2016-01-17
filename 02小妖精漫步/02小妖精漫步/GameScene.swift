@@ -12,6 +12,8 @@ class GameScene: SKScene {
     
     var _idleFrames:NSArray?
     var _walkFrames:NSArray?
+    var _goblin:SKSpriteNode?
+    
     /**
      1. 添加发呆的小妖精
      2. 点击屏幕，让小妖精转身
@@ -21,30 +23,52 @@ class GameScene: SKScene {
      3) 计算行走的距离和时间
      
      */
-    override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
+     //MARK: - 加载纹理图集
+     ///  加载纹理图集
+    func loadAltasFrames(atlasName:String,prefix:String,count:Int)->NSArray{
         
         // 1. 实例化纹理图集
-        let altas:SKTextureAtlas = SKTextureAtlas(named: "Goblin_Idle")
+        let atlas:SKTextureAtlas = SKTextureAtlas(named: atlasName)
         
         // 2. 新建纹理数组
-        let arrayM:NSMutableArray = NSMutableArray(capacity: 28)
-        for var i:Int = 1; i <= 29; i++ {
+        let arrayM:NSMutableArray = NSMutableArray(capacity: count)
 
-            let fileName:NSString = NSString(format: "goblin_idle_%04d", i)
-            let texture:SKTexture = altas.textureNamed(fileName as String)
+        for var i:Int = 1; i <= count; i++ {
+            
+            let fileName:NSString = NSString(format: "%@_%04d", prefix,i)
+            let texture:SKTexture = atlas.textureNamed(fileName as String)
             arrayM.addObject(texture)
         }
-        _idleFrames = arrayM
+        
+            return arrayM;
+    }
+    //MARK: - goblin小妖精执行序列帧动画
+    ///  goblin小妖精执行序列帧动画
+    func goblinRepeatActionWith(array:NSArray){
+        
+        let action:SKAction = SKAction.animateWithTextures(array as! [SKTexture], timePerFrame: 0.1)
+        _goblin!.runAction(SKAction.repeatActionForever(action))
+
+    }
+    
+    
+    
+    override func didMoveToView(view: SKView) {
+        /* Setup your scene here */
+
+        // 1. 实例化纹理图集
+        _idleFrames = self.loadAltasFrames("Goblin_Idle", prefix: "goblin_idle", count: 28)
+        _walkFrames = self.loadAltasFrames("Goblin_Walk", prefix: "goblin_walk", count: 28)
         
         // 3. 实例化小妖精精灵
         let goblin:SKSpriteNode = SKSpriteNode(texture: _idleFrames![0] as? SKTexture)
         goblin.position = CGPointMake(self.size.width / 2, self.size.height / 2);
-        
         self.addChild(goblin)
+        _goblin = goblin
+        
         // 4. 让小妖精发呆动画
-        let action:SKAction = SKAction.animateWithTextures(_idleFrames as! [SKTexture], timePerFrame: 0.1)
-        goblin.runAction(SKAction.repeatActionForever(action))
+        self.goblinRepeatActionWith(_idleFrames!)
+
     
 
     }
@@ -52,23 +76,41 @@ class GameScene: SKScene {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
         
-        for touch in touches {
-            let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
-        }
+        // 让妖精转身
+        // 1. 获取点击的位置
+        
+        let touch:UITouch = (touches as NSSet).anyObject() as! UITouch
+        
+        // 获取当前的位置
+        let location:CGPoint = touch.locationInNode(self)
+        // 2. 计算偏移量
+        let offset:CGPoint = CGPointMake(location.x - _goblin!.position.x, location.y - _goblin!.position.y)
+        
+        // 3. 计算角度 = y / x
+        let angle:CGFloat = CGFloat(atan2f(Float(offset.y) , Float(offset.x)))
+
+        // 4. 设置角度
+        _goblin!.zRotation = angle - CGFloat(M_PI_2)
+  
+
+        
+//        for touch in touches {
+//            let location = touch.locationInNode(self)
+//            
+//            let sprite = SKSpriteNode(imageNamed:"Spaceship")
+//            
+//            sprite.xScale = 0.1
+//            sprite.yScale = 0.1
+//            sprite.position = location
+//            
+//            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
+//            
+//            sprite.runAction(SKAction.repeatActionForever(action))
+//            
+//            self.addChild(sprite)
+//        }
     }
-   
+
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
