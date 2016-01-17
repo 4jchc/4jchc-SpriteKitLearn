@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		962D48CD1C4A4FB000A8C0E4 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = 962D48CB1C4A4FB000A8C0E4 /* background-music-aac.caf */; };
+		962D48CE1C4A4FB000A8C0E4 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = 962D48CC1C4A4FB000A8C0E4 /* pew-pew-lei.caf */; };
+		96DA30F41C48E8D000DAEA2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA30F31C48E8D000DAEA2A /* AppDelegate.swift */; };
+		96DA30F61C48E8D000DAEA2A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 96DA30F51C48E8D000DAEA2A /* GameScene.sks */; };
+		96DA30F81C48E8D000DAEA2A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA30F71C48E8D000DAEA2A /* GameScene.swift */; };
+		96DA30FA1C48E8D000DAEA2A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA30F91C48E8D000DAEA2A /* GameViewController.swift */; };
+		96DA30FD1C48E8D000DAEA2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96DA30FB1C48E8D000DAEA2A /* Main.storyboard */; };
+		96DA30FF1C48E8D000DAEA2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96DA30FE1C48E8D000DAEA2A /* Assets.xcassets */; };
+		96DA31021C48E8D000DAEA2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96DA31001C48E8D000DAEA2A /* LaunchScreen.storyboard */; };
+		96DA310D1C48E8D000DAEA2A /* ____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA310C1C48E8D000DAEA2A /* ____Tests.swift */; };
+		96DA31181C48E8D000DAEA2A /* ____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA31171C48E8D000DAEA2A /* ____UITests.swift */; };
+		96DA31261C48EE0C00DAEA2A /* MyGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA31251C48EE0C00DAEA2A /* MyGameScene.swift */; };
+		96DA31281C491A1400DAEA2A /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 96DA31271C491A1400DAEA2A /* sprites.atlas */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		96DA31091C48E8D000DAEA2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96DA30E81C48E8D000DAEA2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96DA30EF1C48E8D000DAEA2A;
+			remoteInfo = "忍者无敌";
+		};
+		96DA31141C48E8D000DAEA2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96DA30E81C48E8D000DAEA2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96DA30EF1C48E8D000DAEA2A;
+			remoteInfo = "忍者无敌";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		962D48CB1C4A4FB000A8C0E4 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
+		962D48CC1C4A4FB000A8C0E4 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
+		96DA30F01C48E8D000DAEA2A /* 01忍者无敌.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "01忍者无敌.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96DA30F31C48E8D000DAEA2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		96DA30F51C48E8D000DAEA2A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		96DA30F71C48E8D000DAEA2A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		96DA30F91C48E8D000DAEA2A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		96DA30FC1C48E8D000DAEA2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		96DA30FE1C48E8D000DAEA2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96DA31011C48E8D000DAEA2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		96DA31031C48E8D000DAEA2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96DA31081C48E8D000DAEA2A /* 01忍者无敌.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "01忍者无敌.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96DA310C1C48E8D000DAEA2A /* ____Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "____Tests.swift"; sourceTree = "<group>"; };
+		96DA310E1C48E8D000DAEA2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96DA31131C48E8D000DAEA2A /* 01忍者无敌.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "01忍者无敌.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96DA31171C48E8D000DAEA2A /* ____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "____UITests.swift"; sourceTree = "<group>"; };
+		96DA31191C48E8D000DAEA2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96DA31251C48EE0C00DAEA2A /* MyGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGameScene.swift; sourceTree = "<group>"; };
+		96DA31271C491A1400DAEA2A /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96DA30ED1C48E8D000DAEA2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96DA31051C48E8D000DAEA2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96DA31101C48E8D000DAEA2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		962D48CA1C4A4FB000A8C0E4 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				962D48CB1C4A4FB000A8C0E4 /* background-music-aac.caf */,
+				962D48CC1C4A4FB000A8C0E4 /* pew-pew-lei.caf */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		96DA30E71C48E8D000DAEA2A = {
+			isa = PBXGroup;
+			children = (
+				96DA30F21C48E8D000DAEA2A /* 忍者无敌 */,
+				96DA310B1C48E8D000DAEA2A /* 忍者无敌Tests */,
+				96DA31161C48E8D000DAEA2A /* 忍者无敌UITests */,
+				96DA30F11C48E8D000DAEA2A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		96DA30F11C48E8D000DAEA2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96DA30F01C48E8D000DAEA2A /* 01忍者无敌.app */,
+				96DA31081C48E8D000DAEA2A /* 01忍者无敌.xctest */,
+				96DA31131C48E8D000DAEA2A /* 01忍者无敌.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96DA30F21C48E8D000DAEA2A /* 忍者无敌 */ = {
+			isa = PBXGroup;
+			children = (
+				962D48CA1C4A4FB000A8C0E4 /* Sounds */,
+				96DA31271C491A1400DAEA2A /* sprites.atlas */,
+				96DA30F31C48E8D000DAEA2A /* AppDelegate.swift */,
+				96DA30F51C48E8D000DAEA2A /* GameScene.sks */,
+				96DA30F71C48E8D000DAEA2A /* GameScene.swift */,
+				96DA31251C48EE0C00DAEA2A /* MyGameScene.swift */,
+				96DA30F91C48E8D000DAEA2A /* GameViewController.swift */,
+				96DA30FB1C48E8D000DAEA2A /* Main.storyboard */,
+				96DA30FE1C48E8D000DAEA2A /* Assets.xcassets */,
+				96DA31001C48E8D000DAEA2A /* LaunchScreen.storyboard */,
+				96DA31031C48E8D000DAEA2A /* Info.plist */,
+			);
+			path = "忍者无敌";
+			sourceTree = "<group>";
+		};
+		96DA310B1C48E8D000DAEA2A /* 忍者无敌Tests */ = {
+			isa = PBXGroup;
+			children = (
+				96DA310C1C48E8D000DAEA2A /* ____Tests.swift */,
+				96DA310E1C48E8D000DAEA2A /* Info.plist */,
+			);
+			path = "忍者无敌Tests";
+			sourceTree = "<group>";
+		};
+		96DA31161C48E8D000DAEA2A /* 忍者无敌UITests */ = {
+			isa = PBXGroup;
+			children = (
+				96DA31171C48E8D000DAEA2A /* ____UITests.swift */,
+				96DA31191C48E8D000DAEA2A /* Info.plist */,
+			);
+			path = "忍者无敌UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96DA30EF1C48E8D000DAEA2A /* 01忍者无敌 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96DA311C1C48E8D000DAEA2A /* Build configuration list for PBXNativeTarget "01忍者无敌" */;
+			buildPhases = (
+				96DA30EC1C48E8D000DAEA2A /* Sources */,
+				96DA30ED1C48E8D000DAEA2A /* Frameworks */,
+				96DA30EE1C48E8D000DAEA2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "01忍者无敌";
+			productName = "忍者无敌";
+			productReference = 96DA30F01C48E8D000DAEA2A /* 01忍者无敌.app */;
+			productType = "com.apple.product-type.application";
+		};
+		96DA31071C48E8D000DAEA2A /* 01忍者无敌Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96DA311F1C48E8D000DAEA2A /* Build configuration list for PBXNativeTarget "01忍者无敌Tests" */;
+			buildPhases = (
+				96DA31041C48E8D000DAEA2A /* Sources */,
+				96DA31051C48E8D000DAEA2A /* Frameworks */,
+				96DA31061C48E8D000DAEA2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96DA310A1C48E8D000DAEA2A /* PBXTargetDependency */,
+			);
+			name = "01忍者无敌Tests";
+			productName = "忍者无敌Tests";
+			productReference = 96DA31081C48E8D000DAEA2A /* 01忍者无敌.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		96DA31121C48E8D000DAEA2A /* 01忍者无敌UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96DA31221C48E8D000DAEA2A /* Build configuration list for PBXNativeTarget "01忍者无敌UITests" */;
+			buildPhases = (
+				96DA310F1C48E8D000DAEA2A /* Sources */,
+				96DA31101C48E8D000DAEA2A /* Frameworks */,
+				96DA31111C48E8D000DAEA2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96DA31151C48E8D000DAEA2A /* PBXTargetDependency */,
+			);
+			name = "01忍者无敌UITests";
+			productName = "忍者无敌UITests";
+			productReference = 96DA31131C48E8D000DAEA2A /* 01忍者无敌.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96DA30E81C48E8D000DAEA2A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = sijichcai;
+				TargetAttributes = {
+					96DA30EF1C48E8D000DAEA2A = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					96DA31071C48E8D000DAEA2A = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 96DA30EF1C48E8D000DAEA2A;
+					};
+					96DA31121C48E8D000DAEA2A = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 96DA30EF1C48E8D000DAEA2A;
+					};
+				};
+			};
+			buildConfigurationList = 96DA30EB1C48E8D000DAEA2A /* Build configuration list for PBXProject "01忍者无敌" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 96DA30E71C48E8D000DAEA2A;
+			productRefGroup = 96DA30F11C48E8D000DAEA2A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96DA30EF1C48E8D000DAEA2A /* 01忍者无敌 */,
+				96DA31071C48E8D000DAEA2A /* 01忍者无敌Tests */,
+				96DA31121C48E8D000DAEA2A /* 01忍者无敌UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96DA30EE1C48E8D000DAEA2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				962D48CE1C4A4FB000A8C0E4 /* pew-pew-lei.caf in Resources */,
+				96DA31281C491A1400DAEA2A /* sprites.atlas in Resources */,
+				96DA30F61C48E8D000DAEA2A /* GameScene.sks in Resources */,
+				962D48CD1C4A4FB000A8C0E4 /* background-music-aac.caf in Resources */,
+				96DA31021C48E8D000DAEA2A /* LaunchScreen.storyboard in Resources */,
+				96DA30FF1C48E8D000DAEA2A /* Assets.xcassets in Resources */,
+				96DA30FD1C48E8D000DAEA2A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96DA31061C48E8D000DAEA2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96DA31111C48E8D000DAEA2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96DA30EC1C48E8D000DAEA2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96DA30F81C48E8D000DAEA2A /* GameScene.swift in Sources */,
+				96DA30FA1C48E8D000DAEA2A /* GameViewController.swift in Sources */,
+				96DA31261C48EE0C00DAEA2A /* MyGameScene.swift in Sources */,
+				96DA30F41C48E8D000DAEA2A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96DA31041C48E8D000DAEA2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96DA310D1C48E8D000DAEA2A /* ____Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96DA310F1C48E8D000DAEA2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96DA31181C48E8D000DAEA2A /* ____UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		96DA310A1C48E8D000DAEA2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96DA30EF1C48E8D000DAEA2A /* 01忍者无敌 */;
+			targetProxy = 96DA31091C48E8D000DAEA2A /* PBXContainerItemProxy */;
+		};
+		96DA31151C48E8D000DAEA2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96DA30EF1C48E8D000DAEA2A /* 01忍者无敌 */;
+			targetProxy = 96DA31141C48E8D000DAEA2A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		96DA30FB1C48E8D000DAEA2A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96DA30FC1C48E8D000DAEA2A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		96DA31001C48E8D000DAEA2A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96DA31011C48E8D000DAEA2A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		96DA311A1C48E8D000DAEA2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		96DA311B1C48E8D000DAEA2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		96DA311D1C48E8D000DAEA2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "忍者无敌/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "swift.----";
+				PRODUCT_NAME = "01忍者无敌";
+			};
+			name = Debug;
+		};
+		96DA311E1C48E8D000DAEA2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "忍者无敌/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "swift.----";
+				PRODUCT_NAME = "01忍者无敌";
+			};
+			name = Release;
+		};
+		96DA31201C48E8D000DAEA2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "忍者无敌Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "swift.----Tests";
+				PRODUCT_NAME = "01忍者无敌";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/01忍者无敌.app/01忍者无敌";
+			};
+			name = Debug;
+		};
+		96DA31211C48E8D000DAEA2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "忍者无敌Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "swift.----Tests";
+				PRODUCT_NAME = "01忍者无敌";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/01忍者无敌.app/01忍者无敌";
+			};
+			name = Release;
+		};
+		96DA31231C48E8D000DAEA2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "忍者无敌UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "swift.----UITests";
+				PRODUCT_NAME = "01忍者无敌";
+				TEST_TARGET_NAME = "忍者无敌";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		96DA31241C48E8D000DAEA2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "忍者无敌UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "swift.----UITests";
+				PRODUCT_NAME = "01忍者无敌";
+				TEST_TARGET_NAME = "忍者无敌";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96DA30EB1C48E8D000DAEA2A /* Build configuration list for PBXProject "01忍者无敌" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96DA311A1C48E8D000DAEA2A /* Debug */,
+				96DA311B1C48E8D000DAEA2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96DA311C1C48E8D000DAEA2A /* Build configuration list for PBXNativeTarget "01忍者无敌" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96DA311D1C48E8D000DAEA2A /* Debug */,
+				96DA311E1C48E8D000DAEA2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96DA311F1C48E8D000DAEA2A /* Build configuration list for PBXNativeTarget "01忍者无敌Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96DA31201C48E8D000DAEA2A /* Debug */,
+				96DA31211C48E8D000DAEA2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96DA31221C48E8D000DAEA2A /* Build configuration list for PBXNativeTarget "01忍者无敌UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96DA31231C48E8D000DAEA2A /* Debug */,
+				96DA31241C48E8D000DAEA2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96DA30E81C48E8D000DAEA2A /* Project object */;
+}
