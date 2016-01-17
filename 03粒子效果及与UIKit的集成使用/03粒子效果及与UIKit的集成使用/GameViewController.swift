@@ -1,6 +1,6 @@
 //
 //  GameViewController.swift
-//  02小妖精漫步
+//  03粒子效果及与UIKit的集成使用
 //
 //  Created by 蒋进 on 16/1/17.
 //  Copyright (c) 2016年 蒋进. All rights reserved.
@@ -30,10 +30,6 @@ class GameViewController: UIViewController {
         }
     }
 
-    
-    
-    
-    
     override func shouldAutorotate() -> Bool {
         return true
     }
