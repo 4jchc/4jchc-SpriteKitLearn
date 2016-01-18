@@ -28,6 +28,8 @@
 		9686509E1C4CB4CF00A8D995 /* background-568.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 968650921C4CB4CF00A8D995 /* background-568.atlas */; };
 		9686509F1C4CB4CF00A8D995 /* foreground-568.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 968650931C4CB4CF00A8D995 /* foreground-568.atlas */; };
 		968650A01C4CB4CF00A8D995 /* sprites-568.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 968650941C4CB4CF00A8D995 /* sprites-568.atlas */; };
+		968650A71C4CE11600A8D995 /* SKTextureAtlas+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968650A61C4CE11600A8D995 /* SKTextureAtlas+Extension.swift */; };
+		968650A91C4CEE6700A8D995 /* 常量.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968650A81C4CEE6700A8D995 /* 常量.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		968650921C4CB4CF00A8D995 /* background-568.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "background-568.atlas"; sourceTree = "<group>"; };
 		968650931C4CB4CF00A8D995 /* foreground-568.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "foreground-568.atlas"; sourceTree = "<group>"; };
 		968650941C4CB4CF00A8D995 /* sprites-568.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "sprites-568.atlas"; sourceTree = "<group>"; };
+		968650A61C4CE11600A8D995 /* SKTextureAtlas+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SKTextureAtlas+Extension.swift"; path = "../../../4jchc-Extension/4jchc-Extension/4jchc-Extension/Extension【SpriteKit扩展延伸】/SKTextureAtlas+Extension.swift"; sourceTree = "<group>"; };
+		968650A81C4CEE6700A8D995 /* 常量.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "常量.swift"; path = "../../../4jchc-Extension/4jchc-Extension/4jchc-Extension/Extension【扩展延伸】/常量.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 		968650511C4CB44000A8D995 /* 04打鼹鼠 */ = {
 			isa = PBXGroup;
 			children = (
+				968650A31C4CCAC400A8D995 /* Category */,
 				968650841C4CB4CF00A8D995 /* Sounds */,
 				968650881C4CB4CF00A8D995 /* TextureAtlases */,
 				968650521C4CB44000A8D995 /* AppDelegate.swift */,
@@ -205,6 +210,15 @@
 				968650941C4CB4CF00A8D995 /* sprites-568.atlas */,
 			);
 			path = WidescreeniPhone;
+			sourceTree = "<group>";
+		};
+		968650A31C4CCAC400A8D995 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				968650A81C4CEE6700A8D995 /* 常量.swift */,
+				968650A61C4CE11600A8D995 /* SKTextureAtlas+Extension.swift */,
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,7 +368,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				968650A91C4CEE6700A8D995 /* 常量.swift in Sources */,
 				968650571C4CB44000A8D995 /* GameScene.swift in Sources */,
+				968650A71C4CE11600A8D995 /* SKTextureAtlas+Extension.swift in Sources */,
 				968650591C4CB44000A8D995 /* GameViewController.swift in Sources */,
 				968650531C4CB44000A8D995 /* AppDelegate.swift in Sources */,
 			);

@@ -8,28 +8,34 @@
 
 import UIKit
 import SpriteKit
-
 class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let scene = GameScene(fileNamed:"GameScene") {
-            // Configure the view.
-            let skView = self.view as! SKView
+        //let scene = GameScene(fileNamed:"GameScene")
+       
+            
+   
+    }
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        let skView = self.view as! SKView
+        
+        if skView.scene == nil{
+            
             skView.showsFPS = true
             skView.showsNodeCount = true
             
             /* Sprite Kit applies additional optimizations to improve rendering performance */
             skView.ignoresSiblingOrder = true
-            
+            let scene = GameScene.init(size: self.view.bounds.size)
             /* Set the scale mode to scale to fit the window */
             scene.scaleMode = .AspectFill
             
             skView.presentScene(scene)
+            
         }
     }
-
     override func shouldAutorotate() -> Bool {
         return true
     }
