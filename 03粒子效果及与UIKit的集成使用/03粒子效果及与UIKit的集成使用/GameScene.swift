@@ -9,14 +9,18 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    
+    var _emitter:SKEmitterNode!
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!"
-        myLabel.fontSize = 45
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+
+        let path:NSString = NSBundle.mainBundle().pathForResource("MyParticle1", ofType: "sks")!
+        let emitter:SKEmitterNode = NSKeyedUnarchiver.unarchiveObjectWithFile(path as String) as! SKEmitterNode
+        emitter.position = CGPointMake(self.size.width / 2.0, self.size.height / 2.0);
         
-        self.addChild(myLabel)
+        self.addChild(emitter)
+        _emitter = emitter;
+
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -24,21 +28,21 @@ class GameScene: SKScene {
         
         for touch in touches {
             let location = touch.locationInNode(self)
+ 
+            _emitter.position = location
+
+        }
+        
+    }
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        for touch in touches {
+            let location = touch.locationInNode(self)
             
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
+            _emitter.position = location
             
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
         }
     }
-   
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }

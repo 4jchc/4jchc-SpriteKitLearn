@@ -16,6 +16,9 @@
 		96E19AC91C4B84D100EDEC6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96E19AC71C4B84D100EDEC6C /* LaunchScreen.storyboard */; };
 		96E19AD41C4B84D100EDEC6C /* _3______UIKit_____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E19AD31C4B84D100EDEC6C /* _3______UIKit_____Tests.swift */; };
 		96E19ADF1C4B84D100EDEC6C /* _3______UIKit_____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E19ADE1C4B84D100EDEC6C /* _3______UIKit_____UITests.swift */; };
+		96E19AEF1C4B863300EDEC6C /* MyParticle1.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 96E19AED1C4B863300EDEC6C /* MyParticle1.scnp */; };
+		96E19AF01C4B863300EDEC6C /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E19AEE1C4B863300EDEC6C /* spark.png */; };
+		96E19AF21C4B87B400EDEC6C /* MyParticle1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 96E19AF11C4B87B400EDEC6C /* MyParticle1.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		96E19ADA1C4B84D100EDEC6C /* 03粒子效果及与UIKit的集成使用UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "03粒子效果及与UIKit的集成使用UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E19ADE1C4B84D100EDEC6C /* _3______UIKit_____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_3______UIKit_____UITests.swift"; sourceTree = "<group>"; };
 		96E19AE01C4B84D100EDEC6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96E19AED1C4B863300EDEC6C /* MyParticle1.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = MyParticle1.scnp; sourceTree = "<group>"; };
+		96E19AEE1C4B863300EDEC6C /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		96E19AF11C4B87B400EDEC6C /* MyParticle1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle1.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				96E19ABA1C4B84D100EDEC6C /* AppDelegate.swift */,
+				96E19AEC1C4B85EE00EDEC6C /* Partical */,
 				96E19ABC1C4B84D100EDEC6C /* GameScene.sks */,
 				96E19ABE1C4B84D100EDEC6C /* GameScene.swift */,
 				96E19AC01C4B84D100EDEC6C /* GameViewController.swift */,
@@ -129,6 +136,16 @@
 				96E19AE01C4B84D100EDEC6C /* Info.plist */,
 			);
 			path = "03粒子效果及与UIKit的集成使用UITests";
+			sourceTree = "<group>";
+		};
+		96E19AEC1C4B85EE00EDEC6C /* Partical */ = {
+			isa = PBXGroup;
+			children = (
+				96E19AED1C4B863300EDEC6C /* MyParticle1.scnp */,
+				96E19AEE1C4B863300EDEC6C /* spark.png */,
+				96E19AF11C4B87B400EDEC6C /* MyParticle1.sks */,
+			);
+			name = Partical;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,9 +256,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				96E19ABD1C4B84D100EDEC6C /* GameScene.sks in Resources */,
+				96E19AF21C4B87B400EDEC6C /* MyParticle1.sks in Resources */,
+				96E19AF01C4B863300EDEC6C /* spark.png in Resources */,
 				96E19AC91C4B84D100EDEC6C /* LaunchScreen.storyboard in Resources */,
 				96E19AC61C4B84D100EDEC6C /* Assets.xcassets in Resources */,
 				96E19AC41C4B84D100EDEC6C /* Main.storyboard in Resources */,
+				96E19AEF1C4B863300EDEC6C /* MyParticle1.scnp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

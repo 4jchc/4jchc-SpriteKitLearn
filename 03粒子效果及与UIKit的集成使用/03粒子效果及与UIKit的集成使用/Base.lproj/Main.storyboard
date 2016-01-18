@@ -1,25 +1,68 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8118" systemVersion="15A172" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8098"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="_3粒子效果及与UIKit的集成使用" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
                     </layoutGuides>
-                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MUv-ra-TW0">
+                                <rect key="frame" x="57" y="72" width="38" height="9"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Oo-Ys-eCP" customClass="SKView">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wVx-k1-uc1">
+                                        <rect key="frame" x="115" y="275" width="371" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="371" id="SJf-Yn-2ZL"/>
+                                            <constraint firstAttribute="height" constant="30" id="X80-5t-Dzq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PNq-ON-SKv">
+                                        <rect key="frame" x="115" y="198" width="51" height="31"/>
+                                        <color key="onTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="thumbTintColor" red="0.47831180667622047" green="0.94807346204188481" blue="0.25509472601169531" alpha="1" colorSpace="calibratedRGB"/>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="PNq-ON-SKv" firstAttribute="leading" secondItem="wVx-k1-uc1" secondAttribute="leading" id="19s-pz-f6R"/>
+                                    <constraint firstItem="wVx-k1-uc1" firstAttribute="top" secondItem="PNq-ON-SKv" secondAttribute="bottom" constant="46" id="IMI-UR-ebB"/>
+                                    <constraint firstItem="wVx-k1-uc1" firstAttribute="centerY" secondItem="1Oo-Ys-eCP" secondAttribute="centerY" id="kHu-9V-v1K"/>
+                                    <constraint firstItem="wVx-k1-uc1" firstAttribute="centerX" secondItem="1Oo-Ys-eCP" secondAttribute="centerX" id="xb7-j3-mrL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Oo-Ys-eCP" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="4fT-uO-bdV"/>
+                            <constraint firstItem="1Oo-Ys-eCP" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" id="Ms6-kl-uLd"/>
+                            <constraint firstAttribute="trailing" secondItem="1Oo-Ys-eCP" secondAttribute="trailing" id="gwY-g2-nsu"/>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="1Oo-Ys-eCP" secondAttribute="bottom" id="pe1-96-lnK"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myView" destination="1Oo-Ys-eCP" id="ez5-rb-xz3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="159"/>
         </scene>
     </scenes>
 </document>
