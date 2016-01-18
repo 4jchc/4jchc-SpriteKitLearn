@@ -16,6 +16,18 @@
 		968650611C4CB44100A8D995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9686505F1C4CB44100A8D995 /* LaunchScreen.storyboard */; };
 		9686506C1C4CB44100A8D995 /* _4___Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686506B1C4CB44100A8D995 /* _4___Tests.swift */; };
 		968650771C4CB44100A8D995 /* _4___UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968650761C4CB44100A8D995 /* _4___UITests.swift */; };
+		968650951C4CB4CF00A8D995 /* laugh.caf in Resources */ = {isa = PBXBuildFile; fileRef = 968650851C4CB4CF00A8D995 /* laugh.caf */; };
+		968650961C4CB4CF00A8D995 /* ow.caf in Resources */ = {isa = PBXBuildFile; fileRef = 968650861C4CB4CF00A8D995 /* ow.caf */; };
+		968650971C4CB4CF00A8D995 /* whack.caf in Resources */ = {isa = PBXBuildFile; fileRef = 968650871C4CB4CF00A8D995 /* whack.caf */; };
+		968650981C4CB4CF00A8D995 /* background-ipad.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9686508A1C4CB4CF00A8D995 /* background-ipad.atlas */; };
+		968650991C4CB4CF00A8D995 /* foreground-ipad.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9686508B1C4CB4CF00A8D995 /* foreground-ipad.atlas */; };
+		9686509A1C4CB4CF00A8D995 /* sprites-ipad.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9686508C1C4CB4CF00A8D995 /* sprites-ipad.atlas */; };
+		9686509B1C4CB4CF00A8D995 /* background.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9686508E1C4CB4CF00A8D995 /* background.atlas */; };
+		9686509C1C4CB4CF00A8D995 /* foreground.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9686508F1C4CB4CF00A8D995 /* foreground.atlas */; };
+		9686509D1C4CB4CF00A8D995 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 968650901C4CB4CF00A8D995 /* sprites.atlas */; };
+		9686509E1C4CB4CF00A8D995 /* background-568.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 968650921C4CB4CF00A8D995 /* background-568.atlas */; };
+		9686509F1C4CB4CF00A8D995 /* foreground-568.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 968650931C4CB4CF00A8D995 /* foreground-568.atlas */; };
+		968650A01C4CB4CF00A8D995 /* sprites-568.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 968650941C4CB4CF00A8D995 /* sprites-568.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +63,18 @@
 		968650721C4CB44100A8D995 /* 04打鼹鼠UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "04打鼹鼠UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		968650761C4CB44100A8D995 /* _4___UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_4___UITests.swift"; sourceTree = "<group>"; };
 		968650781C4CB44100A8D995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		968650851C4CB4CF00A8D995 /* laugh.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = laugh.caf; sourceTree = "<group>"; };
+		968650861C4CB4CF00A8D995 /* ow.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ow.caf; sourceTree = "<group>"; };
+		968650871C4CB4CF00A8D995 /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
+		9686508A1C4CB4CF00A8D995 /* background-ipad.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "background-ipad.atlas"; sourceTree = "<group>"; };
+		9686508B1C4CB4CF00A8D995 /* foreground-ipad.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "foreground-ipad.atlas"; sourceTree = "<group>"; };
+		9686508C1C4CB4CF00A8D995 /* sprites-ipad.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "sprites-ipad.atlas"; sourceTree = "<group>"; };
+		9686508E1C4CB4CF00A8D995 /* background.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = background.atlas; sourceTree = "<group>"; };
+		9686508F1C4CB4CF00A8D995 /* foreground.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = foreground.atlas; sourceTree = "<group>"; };
+		968650901C4CB4CF00A8D995 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
+		968650921C4CB4CF00A8D995 /* background-568.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "background-568.atlas"; sourceTree = "<group>"; };
+		968650931C4CB4CF00A8D995 /* foreground-568.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "foreground-568.atlas"; sourceTree = "<group>"; };
+		968650941C4CB4CF00A8D995 /* sprites-568.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "sprites-568.atlas"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +125,8 @@
 		968650511C4CB44000A8D995 /* 04打鼹鼠 */ = {
 			isa = PBXGroup;
 			children = (
+				968650841C4CB4CF00A8D995 /* Sounds */,
+				968650881C4CB4CF00A8D995 /* TextureAtlases */,
 				968650521C4CB44000A8D995 /* AppDelegate.swift */,
 				968650541C4CB44000A8D995 /* GameScene.sks */,
 				968650561C4CB44000A8D995 /* GameScene.swift */,
@@ -129,6 +155,56 @@
 				968650781C4CB44100A8D995 /* Info.plist */,
 			);
 			path = "04打鼹鼠UITests";
+			sourceTree = "<group>";
+		};
+		968650841C4CB4CF00A8D995 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				968650851C4CB4CF00A8D995 /* laugh.caf */,
+				968650861C4CB4CF00A8D995 /* ow.caf */,
+				968650871C4CB4CF00A8D995 /* whack.caf */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		968650881C4CB4CF00A8D995 /* TextureAtlases */ = {
+			isa = PBXGroup;
+			children = (
+				968650891C4CB4CF00A8D995 /* iPad */,
+				9686508D1C4CB4CF00A8D995 /* iPhone */,
+				968650911C4CB4CF00A8D995 /* WidescreeniPhone */,
+			);
+			path = TextureAtlases;
+			sourceTree = "<group>";
+		};
+		968650891C4CB4CF00A8D995 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				9686508A1C4CB4CF00A8D995 /* background-ipad.atlas */,
+				9686508B1C4CB4CF00A8D995 /* foreground-ipad.atlas */,
+				9686508C1C4CB4CF00A8D995 /* sprites-ipad.atlas */,
+			);
+			path = iPad;
+			sourceTree = "<group>";
+		};
+		9686508D1C4CB4CF00A8D995 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				9686508E1C4CB4CF00A8D995 /* background.atlas */,
+				9686508F1C4CB4CF00A8D995 /* foreground.atlas */,
+				968650901C4CB4CF00A8D995 /* sprites.atlas */,
+			);
+			path = iPhone;
+			sourceTree = "<group>";
+		};
+		968650911C4CB4CF00A8D995 /* WidescreeniPhone */ = {
+			isa = PBXGroup;
+			children = (
+				968650921C4CB4CF00A8D995 /* background-568.atlas */,
+				968650931C4CB4CF00A8D995 /* foreground-568.atlas */,
+				968650941C4CB4CF00A8D995 /* sprites-568.atlas */,
+			);
+			path = WidescreeniPhone;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,9 +314,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				968650961C4CB4CF00A8D995 /* ow.caf in Resources */,
 				968650551C4CB44000A8D995 /* GameScene.sks in Resources */,
+				968650971C4CB4CF00A8D995 /* whack.caf in Resources */,
+				968650981C4CB4CF00A8D995 /* background-ipad.atlas in Resources */,
+				9686509D1C4CB4CF00A8D995 /* sprites.atlas in Resources */,
+				968650991C4CB4CF00A8D995 /* foreground-ipad.atlas in Resources */,
 				968650611C4CB44100A8D995 /* LaunchScreen.storyboard in Resources */,
+				968650951C4CB4CF00A8D995 /* laugh.caf in Resources */,
 				9686505E1C4CB44100A8D995 /* Assets.xcassets in Resources */,
+				9686509A1C4CB4CF00A8D995 /* sprites-ipad.atlas in Resources */,
+				9686509B1C4CB4CF00A8D995 /* background.atlas in Resources */,
+				9686509F1C4CB4CF00A8D995 /* foreground-568.atlas in Resources */,
+				9686509E1C4CB4CF00A8D995 /* background-568.atlas in Resources */,
+				9686509C1C4CB4CF00A8D995 /* foreground.atlas in Resources */,
+				968650A01C4CB4CF00A8D995 /* sprites-568.atlas in Resources */,
 				9686505C1C4CB44000A8D995 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
