@@ -71,7 +71,7 @@ class GameViewController: UIViewController {
             
             // 2. 创建和配置场景
             //let scene = GameScene(fileNamed:"GameScene")
-            let scene = MyGameScene.init(size: skView.bounds.size)
+            let scene = MyGameScene2.init(size: skView.bounds.size)
             scene.scaleMode = SKSceneScaleMode.AspectFill;
             
             // 3. 展现场景

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		962D48CD1C4A4FB000A8C0E4 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = 962D48CB1C4A4FB000A8C0E4 /* background-music-aac.caf */; };
 		962D48CE1C4A4FB000A8C0E4 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = 962D48CC1C4A4FB000A8C0E4 /* pew-pew-lei.caf */; };
+		9686503D1C4C838E00A8D995 /* MyGameScene-物理碰撞.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686503C1C4C838E00A8D995 /* MyGameScene-物理碰撞.swift */; };
 		96DA30F41C48E8D000DAEA2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA30F31C48E8D000DAEA2A /* AppDelegate.swift */; };
 		96DA30F61C48E8D000DAEA2A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 96DA30F51C48E8D000DAEA2A /* GameScene.sks */; };
 		96DA30F81C48E8D000DAEA2A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA30F71C48E8D000DAEA2A /* GameScene.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		962D48CB1C4A4FB000A8C0E4 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
 		962D48CC1C4A4FB000A8C0E4 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
+		9686503C1C4C838E00A8D995 /* MyGameScene-物理碰撞.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MyGameScene-物理碰撞.swift"; sourceTree = "<group>"; };
 		96DA30F01C48E8D000DAEA2A /* 01忍者无敌.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "01忍者无敌.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96DA30F31C48E8D000DAEA2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96DA30F51C48E8D000DAEA2A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				96DA30F51C48E8D000DAEA2A /* GameScene.sks */,
 				96DA30F71C48E8D000DAEA2A /* GameScene.swift */,
 				96DA31251C48EE0C00DAEA2A /* MyGameScene.swift */,
+				9686503C1C4C838E00A8D995 /* MyGameScene-物理碰撞.swift */,
 				96DA30F91C48E8D000DAEA2A /* GameViewController.swift */,
 				96DA30FB1C48E8D000DAEA2A /* Main.storyboard */,
 				96DA30FE1C48E8D000DAEA2A /* Assets.xcassets */,
@@ -289,6 +292,7 @@
 				96DA30F81C48E8D000DAEA2A /* GameScene.swift in Sources */,
 				96DA30FA1C48E8D000DAEA2A /* GameViewController.swift in Sources */,
 				96DA31261C48EE0C00DAEA2A /* MyGameScene.swift in Sources */,
+				9686503D1C4C838E00A8D995 /* MyGameScene-物理碰撞.swift in Sources */,
 				96DA30F41C48E8D000DAEA2A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
