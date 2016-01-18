@@ -30,6 +30,10 @@ class GameScene: SKScene {
     
     var steps:Int = 0
     
+    
+    /// 1.定义闭包
+    typealias AssetLoadCompletionHandler = () -> Void
+    
     //MARK: - 私有方法
     
     //MARK: - 设置UI布局
@@ -95,9 +99,9 @@ class GameScene: SKScene {
         let arrayM:NSMutableArray = NSMutableArray(capacity: 3)
         for var i:Int = 0; i <= 3; i++ {
             
-
+            
         }
-
+        
         for _ in 0..<3 {
             //节点加载单个纹理图
             let mole:SKSpriteNode = SKSpriteNode(texture: texture)
@@ -130,9 +134,9 @@ class GameScene: SKScene {
     }
     
     
-
-     //MARK: - 鼹鼠动画，先向上出现，停留0.5秒后，再隐藏
-     ///  鼹鼠动画，先向上出现，停留0.5秒后，再隐藏
+    
+    //MARK: - 鼹鼠动画，先向上出现，停留0.5秒后，再隐藏
+    ///  鼹鼠动画，先向上出现，停留0.5秒后，再隐藏
     func moveUpWithMole(mole:SKSpriteNode){
         
         if (self.hasActions()) {
@@ -166,39 +170,79 @@ class GameScene: SKScene {
     
     
     //    override func didMoveToView(view: SKView) {
-//    //        setupUI()
+    //    //        setupUI()
     //    }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         
-//        for touch in touches {
-//            let location = touch.locationInNode(self)
-//            
-//            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-//            
-//            sprite.xScale = 0.5
-//            sprite.yScale = 0.5
-//            sprite.position = location
-//            
-//            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-//            
-//            sprite.runAction(SKAction.repeatActionForever(action))
-//            
-//            self.addChild(sprite)
-//        }
+        //        for touch in touches {
+        //            let location = touch.locationInNode(self)
+        //
+        //            let sprite = SKSpriteNode(imageNamed:"Spaceship")
+        //
+        //            sprite.xScale = 0.5
+        //            sprite.yScale = 0.5
+        //            sprite.position = location
+        //
+        //            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
+        //
+        //            sprite.runAction(SKAction.repeatActionForever(action))
+        //
+        //            self.addChild(sprite)
+        //        }
     }
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         steps++;
         
-
+        
         if (steps % 30 == 0) {
             
             let num:Int = (Int(arc4random_uniform(UInt32(3))))
             self.moveUpWithMole(_moles[num] as! SKSpriteNode)
-
+            
         }
     }
+    //MARK: - 类方法
+    ///  实际的素材加载方法
+    static func loadSceneAssets(){
+        NSThread.sleepForTimeInterval(0.2)
+        NSLog("实例化场景1： %@", NSThread.currentThread());
+    }
+    
+    /**
+     *  加载场景需要使用的素材
+     *
+     *  @param callback 回调方法
+     */
+     //MARK: - 加载场景需要使用的素材
+    static func loadSceneAssetsWithCompletionHandler(callback:AssetLoadCompletionHandler?){
+        
+        
+        let queue:dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        
+         let weakSelf = self
+        
+        
+        dispatch_async(queue) { () -> Void in
+            //处理耗时操作的代码块...
+            weakSelf.loadSceneAssets()
+            if callback != nil{
+                
+                //操作完成，调用主线程来刷新界面
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    NSLog("实例化场景2： %@", NSThread.currentThread());
+                    callback!();
+                })
+            }
+            
+        }
+    
+    }
 }
+
+
+
+

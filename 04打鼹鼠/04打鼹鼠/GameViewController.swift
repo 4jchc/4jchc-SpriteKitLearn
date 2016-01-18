@@ -22,17 +22,22 @@ class GameViewController: UIViewController {
         let skView = self.view as! SKView
         
         if skView.scene == nil{
-            
+            GameScene.loadSceneAssetsWithCompletionHandler({ () -> Void in
+                
+                //关闭显示器
+                skView.ignoresSiblingOrder = true
+                //创建和配置场景
+                let scene = GameScene.init(size: self.view.bounds.size)
+                scene.scaleMode = .AspectFill
+                //展现场景
+                skView.presentScene(scene)
+            })
+
+            //用于显示器
             skView.showsFPS = true
             skView.showsNodeCount = true
             
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
-            let scene = GameScene.init(size: self.view.bounds.size)
-            /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
-            
-            skView.presentScene(scene)
+
             
         }
     }
