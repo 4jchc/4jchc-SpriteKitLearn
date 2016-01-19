@@ -7,7 +7,7 @@
 //
 
 import SpriteKit
-
+//多线程加载素材实现鼹鼠笑动画及声音
 class GameScene: SKScene {
     
     var _scoreLabel:SKLabelNode!
@@ -16,13 +16,13 @@ class GameScene: SKScene {
     var _startTime:NSDate!
     
     
-    var sSharedDirtTexture:SKTexture?
-    var sSharedUpperTexture:SKTexture?
-    var sSharedLowerTexture:SKTexture?
-    var sSharedMoleTexture:SKTexture?
+   static var sSharedDirtTexture:SKTexture = SKTexture()
+   static var sSharedUpperTexture:SKTexture?
+   static var sSharedLowerTexture:SKTexture?
+   static var sSharedMoleTexture:SKTexture?
     
-    var sSharedMoleLaughFrames:NSArray?
-    var sSharedMoleThumpFrames:NSArray?
+   static var sSharedMoleLaughFrames:NSArray?
+   static var sSharedMoleThumpFrames:NSArray?
     
     // 鼹鼠数组
     var _moles:NSArray!
@@ -43,12 +43,13 @@ class GameScene: SKScene {
         let center:CGPoint = CGPointMake(self.size.width / 2.0, self.size.height / 2.0);
         
         // 1. 添加背景
-        //添加纹理图集
-        let altas:SKTextureAtlas = SKTextureAtlas.atlasWithName("background")
-        //单个纹理图
-        let dirtTexture:SKTexture = altas.textureNamed("bg_dirt")
+//        //添加纹理图集
+//        let altas:SKTextureAtlas = SKTextureAtlas.atlasWithName("background")
+//        //单个纹理图
+//        let dirtTexture:SKTexture = altas.textureNamed("bg_dirt")
+        
         //节点加载单个纹理图
-        let dirt:SKSpriteNode = SKSpriteNode(texture: dirtTexture)
+        let dirt:SKSpriteNode = SKSpriteNode(texture: GameScene.sSharedDirtTexture)
         
         dirt.position = center
         // 放大比例
@@ -57,12 +58,12 @@ class GameScene: SKScene {
         
         // 2. 添加前景
         // 2.1 上面的草
-        //添加纹理图集
-        let foreAltas:SKTextureAtlas = SKTextureAtlas.atlasWithName("foreground")
-        //单个纹理图
-        let upperTexture:SKTexture = foreAltas.textureNamed("grass_upper")
+//        //添加纹理图集
+//        let foreAltas:SKTextureAtlas = SKTextureAtlas.atlasWithName("foreground")
+//        //单个纹理图
+//        let upperTexture:SKTexture = foreAltas.textureNamed("grass_upper")
         //节点加载单个纹理图
-        let upper:SKSpriteNode = SKSpriteNode(texture: upperTexture)
+        let upper:SKSpriteNode = SKSpriteNode(texture: GameScene.sSharedUpperTexture)
         //锚点
         upper.anchorPoint = CGPointMake(0.5, 0.0);
         upper.position = center;
@@ -72,9 +73,9 @@ class GameScene: SKScene {
         
         // 2.2 下面的草
         //单个纹理图
-        let lowerTexture:SKTexture = foreAltas.textureNamed("grass_lower")
+//        let lowerTexture:SKTexture = foreAltas.textureNamed("grass_lower")
         //节点加载单个纹理图
-        let lower:SKSpriteNode = SKSpriteNode(texture: lowerTexture)
+        let lower:SKSpriteNode = SKSpriteNode(texture: GameScene.sSharedLowerTexture)
         //锚点
         lower.anchorPoint = CGPointMake(0.5, 1.0);
         lower.position = center;
@@ -90,10 +91,10 @@ class GameScene: SKScene {
     ///  加载鼹鼠
     func loadMoles(){
         
-        // 1. 添加鼹鼠纹理图集
-        let foreAltas:SKTextureAtlas = SKTextureAtlas.atlasWithName("sprites")
-        //单个纹理图
-        let texture:SKTexture = foreAltas.textureNamed("mole_1")
+//        // 1. 添加鼹鼠纹理图集
+//        let foreAltas:SKTextureAtlas = SKTextureAtlas.atlasWithName("sprites")
+//        //单个纹理图
+//        let texture:SKTexture = foreAltas.textureNamed("mole_1")
         
         // 2. 创建鼹鼠精灵并添加至数组
         let arrayM:NSMutableArray = NSMutableArray(capacity: 3)
@@ -104,7 +105,7 @@ class GameScene: SKScene {
         
         for _ in 0..<3 {
             //节点加载单个纹理图
-            let mole:SKSpriteNode = SKSpriteNode(texture: texture)
+            let mole:SKSpriteNode = SKSpriteNode(texture: GameScene.sSharedMoleTexture)
             
             arrayM.addObject(mole)
         }
@@ -118,7 +119,7 @@ class GameScene: SKScene {
     func setupMoles(){
         
         let holeOffset:CGFloat = 155;
-        let startPoint:CGPoint = CGPointMake(self.size.width / 2 - holeOffset, self.size.height / 2 - 75);
+        let startPoint:CGPoint = CGPointMake(self.size.width / 2 - holeOffset, self.size.height / 2 - 70);//75上面的部分不显示
         
         _moles.enumerateObjectsUsingBlock { (mole, idex, strop) -> Void in
             
@@ -205,11 +206,35 @@ class GameScene: SKScene {
             
         }
     }
-    //MARK: - 类方法
+    //MARK: - 类方法-多线程加载素材
     ///  实际的素材加载方法
     static func loadSceneAssets(){
         NSThread.sleepForTimeInterval(0.2)
         NSLog("实例化场景1： %@", NSThread.currentThread());
+        
+        // 1. 加载背景
+        //添加纹理图集
+        let backgroundAtlas:SKTextureAtlas = SKTextureAtlas.atlasWithName("background")
+        //单个纹理图
+        sSharedDirtTexture = backgroundAtlas.textureNamed("bg_dirt")
+        
+        // 2. 上面的草
+        //添加纹理图集
+        let foregroundAtlas:SKTextureAtlas = SKTextureAtlas.atlasWithName("foreground")
+        //单个纹理图
+        sSharedUpperTexture = foregroundAtlas.textureNamed("grass_upper")
+        
+        //TODO:
+        // 3. 下面的草
+        //单个纹理图
+        sSharedLowerTexture = foregroundAtlas.textureNamed("grass_lower")
+        
+        // 4. 鼹鼠
+        // 1. 添加鼹鼠纹理图集
+        let foreAltas:SKTextureAtlas = SKTextureAtlas.atlasWithName("sprites")
+        // 2. 单个纹理图
+        sSharedMoleTexture = foreAltas.textureNamed("mole_1")
+
     }
     
     /**
