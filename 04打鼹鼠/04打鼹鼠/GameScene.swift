@@ -21,8 +21,8 @@ class GameScene: SKScene {
    static var sSharedLowerTexture:SKTexture?
    static var sSharedMoleTexture:SKTexture?
     
-   static var sSharedMoleLaughFrames:NSArray?
-   static var sSharedMoleThumpFrames:NSArray?
+   static var sSharedMoleLaughFrames:[SKTexture] = []
+   static var sSharedMoleThumpFrames:NSArray = NSArray()
     
     // 鼹鼠数组
     var _moles:NSArray!
@@ -100,9 +100,9 @@ class GameScene: SKScene {
         let arrayM:NSMutableArray = NSMutableArray(capacity: 3)
         for _ in 0..<3 {
             //节点加载单个纹理图
-            let mole:Mole = Mole.moleWithTexture(GameScene.sSharedMoleTexture!)
-         
+            let mole:Mole = Mole.moleWithTexture(GameScene.sSharedMoleTexture!, laughFrames: GameScene.sSharedMoleLaughFrames, thumpFrames: GameScene.sSharedMoleThumpFrames)
             
+         
             arrayM.addObject(mole)
         }
         
@@ -125,7 +125,7 @@ class GameScene: SKScene {
 
             self.addChild(mole)
         }
-        
+    
     }
     
     
@@ -183,9 +183,10 @@ class GameScene: SKScene {
             
         }
     }
-    //MARK: - 类方法-多线程加载素材
+    //MARK: - 类方法-多线程加载素材(static的类方法.属性也要是static)
     ///  实际的素材加载方法
     static func loadSceneAssets(){
+    
         NSThread.sleepForTimeInterval(0.2)
         NSLog("实例化场景1： %@", NSThread.currentThread());
         
@@ -208,9 +209,23 @@ class GameScene: SKScene {
         
         // 4. 鼹鼠
         // 1. 添加鼹鼠纹理图集
-        let foreAltas:SKTextureAtlas = SKTextureAtlas.atlasWithName("sprites")
+        let moleAtlas:SKTextureAtlas = SKTextureAtlas.atlasWithName("sprites")
         // 2. 单个纹理图
-        sSharedMoleTexture = foreAltas.textureNamed("mole_1")
+        sSharedMoleTexture = moleAtlas.textureNamed("mole_1")
+        
+        
+        // 5. 鼹鼠笑的数组
+        sSharedMoleLaughFrames = [moleAtlas.textureNamed("mole_laugh1"),
+                        moleAtlas.textureNamed("mole_laugh2"),
+                        moleAtlas.textureNamed("mole_laugh3")
+        ]
+
+        // 6. 鼹鼠挨打的数组
+        sSharedMoleThumpFrames = [moleAtlas.textureNamed("mole_thump1"),
+                        moleAtlas.textureNamed("mole_thump2"),
+                        moleAtlas.textureNamed("mole_thump3"),
+                        moleAtlas.textureNamed("mole_thump4") ]
+
 
     }
     
@@ -241,6 +256,10 @@ class GameScene: SKScene {
             }
         }
     }
+    
+    
+    
+    
     
 }
 
