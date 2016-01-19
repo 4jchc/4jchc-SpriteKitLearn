@@ -26,7 +26,7 @@ class GameScene: SKScene {
     
     // 鼹鼠数组
     var _moles:NSArray!
-    var Mole:SKSpriteNode!
+    //var Mole:SKSpriteNode!
     
     var steps:Int = 0
     
@@ -98,14 +98,10 @@ class GameScene: SKScene {
         
         // 2. 创建鼹鼠精灵并添加至数组
         let arrayM:NSMutableArray = NSMutableArray(capacity: 3)
-        for var i:Int = 0; i <= 3; i++ {
-            
-            
-        }
-        
         for _ in 0..<3 {
             //节点加载单个纹理图
-            let mole:SKSpriteNode = SKSpriteNode(texture: GameScene.sSharedMoleTexture)
+            let mole:Mole = Mole.moleWithTexture(GameScene.sSharedMoleTexture!)
+         
             
             arrayM.addObject(mole)
         }
@@ -126,9 +122,7 @@ class GameScene: SKScene {
             let p:CGPoint = CGPointMake(startPoint.x +  CGFloat(idex) * holeOffset, startPoint.y);
             let mole = mole as! SKSpriteNode
             mole.position = p
-            
-            //mole.hiddenY = p.y;
-            mole.zPosition = 1;
+
             self.addChild(mole)
         }
         
@@ -136,25 +130,7 @@ class GameScene: SKScene {
     
     
     
-    //MARK: - 鼹鼠动画，先向上出现，停留0.5秒后，再隐藏
-    ///  鼹鼠动画，先向上出现，停留0.5秒后，再隐藏
-    func moveUpWithMole(mole:SKSpriteNode){
-        
-        if (self.hasActions()) {
-            
-            return
-        }
-        let moveUp:SKAction = SKAction.moveToY(mole.position.y + mole.size.height, duration:0.2)
-        
-        moveUp.timingMode = SKActionTimingMode.EaseInEaseOut//SKActionTiming.EaseOut;
-        let moveDown:SKAction = SKAction.moveToY(mole.position.y, duration: 0.2)
-        moveDown.timingMode = SKActionTimingMode.EaseInEaseOut
-        let delay:SKAction = SKAction.waitForDuration(0.5)
-        let sequence:SKAction = SKAction.sequence([moveUp, delay, moveDown])
-        
-        
-        mole.runAction(sequence)
-    }
+
     
     
     override init(size: CGSize) {
@@ -202,7 +178,8 @@ class GameScene: SKScene {
         if (steps % 30 == 0) {
             
             let num:Int = (Int(arc4random_uniform(UInt32(3))))
-            self.moveUpWithMole(_moles[num] as! SKSpriteNode)
+            let mole:Mole = _moles[num] as! Mole
+            mole.moveUp()
             
         }
     }
@@ -262,10 +239,9 @@ class GameScene: SKScene {
                     callback!();
                 })
             }
-            
         }
-    
     }
+    
 }
 
 
