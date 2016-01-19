@@ -115,14 +115,15 @@ class GameScene: SKScene {
     func setupMoles(){
         
         let holeOffset:CGFloat = 155;
-        let startPoint:CGPoint = CGPointMake(self.size.width / 2 - holeOffset, self.size.height / 2 - 70);//75上面的部分不显示
+        let startPoint:CGPoint = CGPointMake(self.size.width / 2 - holeOffset, self.size.height / 2 - 70)
         
         _moles.enumerateObjectsUsingBlock { (mole, idex, strop) -> Void in
             
             let p:CGPoint = CGPointMake(startPoint.x +  CGFloat(idex) * holeOffset, startPoint.y);
-            let mole = mole as! SKSpriteNode
+            let mole = mole as! Mole
             mole.position = p
-
+            mole.zPosition = 1;
+            mole.hiddenY = p.y;
             self.addChild(mole)
         }
     
@@ -152,22 +153,29 @@ class GameScene: SKScene {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
-        
-        //        for touch in touches {
-        //            let location = touch.locationInNode(self)
-        //
-        //            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-        //
-        //            sprite.xScale = 0.5
-        //            sprite.yScale = 0.5
-        //            sprite.position = location
-        //
-        //            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-        //
-        //            sprite.runAction(SKAction.repeatActionForever(action))
-        //
-        //            self.addChild(sprite)
-        //        }
+  
+
+                for touch in touches {
+                    let location = touch.locationInNode(self)
+                    let node:SKNode = self.nodeAtPoint(location)
+                    if node.name == "mole"{
+                    
+                        let mole = node as! Mole
+                        mole.thumped()
+                    }
+                    
+//                    let sprite = SKSpriteNode(imageNamed:"Spaceship")
+//        
+//                    sprite.xScale = 0.5
+//                    sprite.yScale = 0.5
+//                    sprite.position = location
+//        
+//                    let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
+//        
+//                    sprite.runAction(SKAction.repeatActionForever(action))
+//        
+//                    self.addChild(sprite)
+                }
     }
     
     override func update(currentTime: CFTimeInterval) {
@@ -179,7 +187,7 @@ class GameScene: SKScene {
             
             let num:Int = (Int(arc4random_uniform(UInt32(3))))
             let mole:Mole = _moles[num] as! Mole
-            mole.moveUp()
+            mole.moveUpDown()
             
         }
     }
@@ -224,7 +232,8 @@ class GameScene: SKScene {
         sSharedMoleThumpFrames = [moleAtlas.textureNamed("mole_thump1"),
                         moleAtlas.textureNamed("mole_thump2"),
                         moleAtlas.textureNamed("mole_thump3"),
-                        moleAtlas.textureNamed("mole_thump4") ]
+                        moleAtlas.textureNamed("mole_thump4")
+        ]
 
 
     }

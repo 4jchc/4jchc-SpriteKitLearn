@@ -16,6 +16,13 @@ class Mole: SKSpriteNode {
     var thumpAction:SKAction!
     
     
+    /** 被打了标记 */
+    var beThumped = false
+    
+    /** 隐藏时的Y值 */
+    var hiddenY = CGFloat()
+    
+    
     //MARK: - 使用材质实例化鼹鼠
     ///  使用材质实例化鼹鼠
     //   static func moleWithTexture(texture:SKTexture)->Mole{
@@ -42,34 +49,54 @@ class Mole: SKSpriteNode {
         let thumpSound:SKAction = SKAction.playSoundFileNamed("ow.caf", waitForCompletion: false)
         mole.thumpAction = SKAction.group([thump, thumpSound])
         
-        
-
+        mole.name = "mole"
         return mole
     }
     
-    
-    
-    
-    
-    
+
     
     //MARK: - 鼹鼠动画，先向上出现，停留0.5秒后，再隐藏
     ///  鼹鼠动画，先向上出现，停留0.5秒后，再隐藏
-    func moveUp(){
+    func moveUpDown(){
         
         if (self.hasActions()) {
             
             return
         }
-        let moveUp:SKAction = SKAction.moveToY(self.position.y + self.size.height, duration:0.2)
-        
+        let moveUp:SKAction = SKAction.moveToY(self.hiddenY + self.size.height, duration:0.2)
         moveUp.timingMode = SKActionTimingMode.EaseInEaseOut//SKActionTiming.EaseOut;
-        let moveDown:SKAction = SKAction.moveToY(self.position.y, duration: 0.2)
+        
+        let moveDown:SKAction = SKAction.moveToY(self.hiddenY, duration: 0.2)//self.position.y
         moveDown.timingMode = SKActionTimingMode.EaseInEaseOut
+        
         let delay:SKAction = SKAction.waitForDuration(0.5)
         let sequence:SKAction = SKAction.sequence([moveUp,self.laughAction, delay, moveDown])
         
         
         self.runAction(sequence)
+    }
+    
+    
+    
+    //MARK: -  鼹鼠被打了
+    ///   鼹鼠被打了
+    func thumped(){
+        
+        if (self.beThumped)  {return}
+        self.beThumped = true
+        
+        // 1. 删除所有操作
+        self.removeAllActions()
+        
+        // 2. 定义向下移动的动画
+        let moveDown:SKAction = SKAction.moveToY(self.hiddenY, duration: 0.2)
+        
+        moveDown.timingMode = SKActionTimingMode.EaseInEaseOut
+        let sequence:SKAction = SKAction.sequence([self.thumpAction,moveDown])
+        self.runAction(sequence) { () -> Void in
+            
+            self.beThumped = false
+        }
+        
     }
 }
