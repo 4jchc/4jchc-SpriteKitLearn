@@ -28,4 +28,5 @@ let IS_IPAD = UIDevice.currentDevice().userInterfaceIdiom == .Pad
 let IS_RETINA = UIScreen.mainScreen().scale>=2.0 //&& UIScreen.mainScreen().respondsToSelector("scale")
 
 
+let kFontSize = CGFloat((IS_IPAD) ? 40.0 : 14.0)
 

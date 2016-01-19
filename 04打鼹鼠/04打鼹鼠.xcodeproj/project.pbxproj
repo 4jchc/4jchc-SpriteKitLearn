@@ -31,6 +31,7 @@
 		968650AB1C4CF14E00A8D995 /* 常量.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968650AA1C4CF14E00A8D995 /* 常量.swift */; };
 		968650AD1C4CF16E00A8D995 /* SKTextureAtlas+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968650AC1C4CF16E00A8D995 /* SKTextureAtlas+Extension.swift */; };
 		96A2F0941C4DE3B600B819B9 /* Mole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A2F0931C4DE3B600B819B9 /* Mole.swift */; };
+		96A2F0961C4E343900B819B9 /* GameScene_iPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A2F0951C4E343900B819B9 /* GameScene_iPad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		968650AA1C4CF14E00A8D995 /* 常量.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "常量.swift"; sourceTree = "<group>"; };
 		968650AC1C4CF16E00A8D995 /* SKTextureAtlas+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKTextureAtlas+Extension.swift"; sourceTree = "<group>"; };
 		96A2F0931C4DE3B600B819B9 /* Mole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mole.swift; sourceTree = "<group>"; };
+		96A2F0951C4E343900B819B9 /* GameScene_iPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene_iPad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				968650521C4CB44000A8D995 /* AppDelegate.swift */,
 				968650541C4CB44000A8D995 /* GameScene.sks */,
 				968650561C4CB44000A8D995 /* GameScene.swift */,
+				96A2F0951C4E343900B819B9 /* GameScene_iPad.swift */,
 				96A2F0931C4DE3B600B819B9 /* Mole.swift */,
 				968650581C4CB44000A8D995 /* GameViewController.swift */,
 				9686505A1C4CB44000A8D995 /* Main.storyboard */,
@@ -376,6 +379,7 @@
 				968650591C4CB44000A8D995 /* GameViewController.swift in Sources */,
 				968650AB1C4CF14E00A8D995 /* 常量.swift in Sources */,
 				96A2F0941C4DE3B600B819B9 /* Mole.swift in Sources */,
+				96A2F0961C4E343900B819B9 /* GameScene_iPad.swift in Sources */,
 				968650531C4CB44000A8D995 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

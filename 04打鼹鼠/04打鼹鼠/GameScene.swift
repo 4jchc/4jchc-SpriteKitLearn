@@ -10,25 +10,43 @@ import SpriteKit
 //多线程加载素材实现鼹鼠笑动画及声音
 class GameScene: SKScene {
     
+    // 用来调整动画速度
+    var steps = 0;
+    // 根据分数来加速
+    static var speed = 0;
+    // 判断游戏结束
+    static var gameOver = 10;
+    
+    
+    
+    // 得分标签
     var _scoreLabel:SKLabelNode!
-    var _score:Int!
+    // 用户得分
+    var _score:Int = 0
+    // 时钟标签
     var _timerLabel:SKLabelNode!
+    // 游戏开始时间
     var _startTime:NSDate!
+    // lose标签
+    var _loseLabel:SKLabelNode!
+    // lose计数
+    var _lose:Int = 0
+    // 游戏提示标签
+    var _noteLabel:SKLabelNode!
+    // 游戏结束
+    var _isGameOver:Bool!
     
+    //MARK: -  所有材质的静态变量，在加载材质方法中被设置
+    static var sSharedDirtTexture:SKTexture = SKTexture()
+    static var sSharedUpperTexture:SKTexture?
+    static var sSharedLowerTexture:SKTexture?
+    static var sSharedMoleTexture:SKTexture?
     
-   static var sSharedDirtTexture:SKTexture = SKTexture()
-   static var sSharedUpperTexture:SKTexture?
-   static var sSharedLowerTexture:SKTexture?
-   static var sSharedMoleTexture:SKTexture?
-    
-   static var sSharedMoleLaughFrames:[SKTexture] = []
-   static var sSharedMoleThumpFrames:NSArray = NSArray()
+    static var sSharedMoleLaughFrames:[SKTexture] = []
+    static var sSharedMoleThumpFrames:NSArray = NSArray()
     
     // 鼹鼠数组
     var _moles:NSArray!
-    //var Mole:SKSpriteNode!
-    
-    var steps:Int = 0
     
     
     /// 1.定义闭包
@@ -43,10 +61,10 @@ class GameScene: SKScene {
         let center:CGPoint = CGPointMake(self.size.width / 2.0, self.size.height / 2.0);
         
         // 1. 添加背景
-//        //添加纹理图集
-//        let altas:SKTextureAtlas = SKTextureAtlas.atlasWithName("background")
-//        //单个纹理图
-//        let dirtTexture:SKTexture = altas.textureNamed("bg_dirt")
+        //        //添加纹理图集
+        //        let altas:SKTextureAtlas = SKTextureAtlas.atlasWithName("background")
+        //        //单个纹理图
+        //        let dirtTexture:SKTexture = altas.textureNamed("bg_dirt")
         
         //节点加载单个纹理图
         let dirt:SKSpriteNode = SKSpriteNode(texture: GameScene.sSharedDirtTexture)
@@ -58,10 +76,10 @@ class GameScene: SKScene {
         
         // 2. 添加前景
         // 2.1 上面的草
-//        //添加纹理图集
-//        let foreAltas:SKTextureAtlas = SKTextureAtlas.atlasWithName("foreground")
-//        //单个纹理图
-//        let upperTexture:SKTexture = foreAltas.textureNamed("grass_upper")
+        //        //添加纹理图集
+        //        let foreAltas:SKTextureAtlas = SKTextureAtlas.atlasWithName("foreground")
+        //        //单个纹理图
+        //        let upperTexture:SKTexture = foreAltas.textureNamed("grass_upper")
         //节点加载单个纹理图
         let upper:SKSpriteNode = SKSpriteNode(texture: GameScene.sSharedUpperTexture)
         //锚点
@@ -73,7 +91,7 @@ class GameScene: SKScene {
         
         // 2.2 下面的草
         //单个纹理图
-//        let lowerTexture:SKTexture = foreAltas.textureNamed("grass_lower")
+        //        let lowerTexture:SKTexture = foreAltas.textureNamed("grass_lower")
         //节点加载单个纹理图
         let lower:SKSpriteNode = SKSpriteNode(texture: GameScene.sSharedLowerTexture)
         //锚点
@@ -81,6 +99,64 @@ class GameScene: SKScene {
         lower.position = center;
         lower.zPosition = 2
         self.addChild(lower)
+        
+        // 3. 得分标签
+        
+        _scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
+        _scoreLabel.text = "Score: 0";
+        _scoreLabel.fontSize = kFontSize;
+//        let ScoreX:CGFloat = (IS_IPAD ? (20) : (20));
+//        let ScoreY:CGFloat = (IS_IPAD ? (80) : (20));
+//        _scoreLabel.position = CGPointMake(ScoreX, ScoreY);
+        _scoreLabel.position = CGPointMake(20, 20);
+        _scoreLabel.zPosition = 4;
+        _scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left;
+        
+        self.addChild(_scoreLabel)
+        
+        
+        // 4. 计时标签
+        
+        _timerLabel = SKLabelNode(fontNamed: "Academy Engraved LET")
+        _timerLabel.text = "00:00:00";
+        _timerLabel.fontSize = kFontSize
+        _timerLabel.zPosition = 4;
+//        let timerX:CGFloat  = (IS_IPAD ? (self.size.width - 160) : (self.size.width - 20));
+//        let timerY:CGFloat  = (IS_IPAD ? (self.size.height - 30 - 160) : (self.size.height - kFontSize - 20));
+//        _timerLabel.position = CGPointMake(timerX, timerY);
+
+        _timerLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Right;
+        _timerLabel.position = CGPointMake(self.size.width - 20, self.size.height - kFontSize - 20);
+        self.addChild(_timerLabel)
+        
+        //5.添加lose标签
+        
+        _loseLabel = SKLabelNode(fontNamed: "Chalkduster")
+        _loseLabel.text = "Lose: 0";
+        _loseLabel.fontSize = kFontSize;
+        _loseLabel.fontColor = SKColor.redColor()
+//        let loseX:CGFloat   = (IS_IPAD ? (260) : (20));
+//        let loseY:CGFloat   = (IS_IPAD ? (200) : (20));
+//        _loseLabel.position = CGPointMake(loseX, loseY);
+        _loseLabel.position = CGPointMake(99, 20);
+        _loseLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left;
+        _loseLabel.zPosition = 4;
+        
+        self.addChild(_loseLabel)
+        
+        //6.添加note标签
+        
+        _noteLabel = SKLabelNode(fontNamed: "Chalkduster")
+        _noteLabel.fontSize = kFontSize
+        _noteLabel.fontColor = SKColor.redColor()
+        let noteX:CGFloat  = (IS_IPAD ? (260) : (self.size.width / 2.0 - 40));
+        let noteY:CGFloat  = (IS_IPAD ? (200) : (200));
+        _noteLabel.position = CGPointMake(noteX, noteY);
+        _noteLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left;
+        _noteLabel.zPosition = 4;
+        
+        self.addChild(_noteLabel)
+        
         
     }
     
@@ -91,10 +167,10 @@ class GameScene: SKScene {
     ///  加载鼹鼠
     func loadMoles(){
         
-//        // 1. 添加鼹鼠纹理图集
-//        let foreAltas:SKTextureAtlas = SKTextureAtlas.atlasWithName("sprites")
-//        //单个纹理图
-//        let texture:SKTexture = foreAltas.textureNamed("mole_1")
+        //        // 1. 添加鼹鼠纹理图集
+        //        let foreAltas:SKTextureAtlas = SKTextureAtlas.atlasWithName("sprites")
+        //        //单个纹理图
+        //        let texture:SKTexture = foreAltas.textureNamed("mole_1")
         
         // 2. 创建鼹鼠精灵并添加至数组
         let arrayM:NSMutableArray = NSMutableArray(capacity: 3)
@@ -102,7 +178,7 @@ class GameScene: SKScene {
             //节点加载单个纹理图
             let mole:Mole = Mole.moleWithTexture(GameScene.sSharedMoleTexture!, laughFrames: GameScene.sSharedMoleLaughFrames, thumpFrames: GameScene.sSharedMoleThumpFrames)
             
-         
+            
             arrayM.addObject(mole)
         }
         
@@ -126,12 +202,12 @@ class GameScene: SKScene {
             mole.hiddenY = p.y;
             self.addChild(mole)
         }
-    
+        
     }
     
     
     
-
+    
     
     
     override init(size: CGSize) {
@@ -139,12 +215,12 @@ class GameScene: SKScene {
         setupUI()
         loadMoles()
         setupMoles()
+        _startTime = NSDate()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     
     //    override func didMoveToView(view: SKView) {
@@ -153,37 +229,34 @@ class GameScene: SKScene {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
-  
-
-                for touch in touches {
-                    let location = touch.locationInNode(self)
-                    let node:SKNode = self.nodeAtPoint(location)
-                    if node.name == "mole"{
-                    
-                        let mole = node as! Mole
-                        mole.thumped()
-                    }
-                    
-//                    let sprite = SKSpriteNode(imageNamed:"Spaceship")
-//        
-//                    sprite.xScale = 0.5
-//                    sprite.yScale = 0.5
-//                    sprite.position = location
-//        
-//                    let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-//        
-//                    sprite.runAction(SKAction.repeatActionForever(action))
-//        
-//                    self.addChild(sprite)
-                }
+        
+        
+        for touch in touches {
+            let location = touch.locationInNode(self)
+            let node:SKNode = self.nodeAtPoint(location)
+            if node.name == "mole"{
+                
+                let mole = node as! Mole
+                mole.thumped()
+                
+                _score += 10;
+                _scoreLabel.text = NSString(format: "Score: %d", _score) as String
+                
+            }
+        }
     }
-    
+    //MARK: -  屏幕每次刷新时调用，在SpriteKit中不需要自行指定时钟
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         steps++;
         
+        // 更新时钟标签
+        let dt:Int = Int(NSDate().timeIntervalSinceDate(_startTime))
+        _timerLabel.text = NSString(format: "%02d:%02d:%02d", dt / 3600, (dt % 3600) / 60, dt % 60) as String
         
-        if (steps % 30 == 0) {
+        var seed:Int = (30 - _score / 10)
+        seed = (seed > 5) ? seed : 5;
+        if (steps % seed == 0) {
             
             let num:Int = (Int(arc4random_uniform(UInt32(3))))
             let mole:Mole = _moles[num] as! Mole
@@ -191,10 +264,11 @@ class GameScene: SKScene {
             
         }
     }
-    //MARK: - 类方法-多线程加载素材(static的类方法.属性也要是static)
-    ///  实际的素材加载方法
+    //MARK: - 由于游戏开发中，素材经常会发生变化，因此加载素材的方法，最好单独使用一个方法完成，这样便于应用程序的维护
+    ///  真正的加载素材的方法
+    //类方法-多线程加载素材(static的类方法.属性也要是static)
     static func loadSceneAssets(){
-    
+        
         NSThread.sleepForTimeInterval(0.2)
         NSLog("实例化场景1： %@", NSThread.currentThread());
         
@@ -224,18 +298,18 @@ class GameScene: SKScene {
         
         // 5. 鼹鼠笑的数组
         sSharedMoleLaughFrames = [moleAtlas.textureNamed("mole_laugh1"),
-                        moleAtlas.textureNamed("mole_laugh2"),
-                        moleAtlas.textureNamed("mole_laugh3")
+            moleAtlas.textureNamed("mole_laugh2"),
+            moleAtlas.textureNamed("mole_laugh3")
         ]
-
+        
         // 6. 鼹鼠挨打的数组
         sSharedMoleThumpFrames = [moleAtlas.textureNamed("mole_thump1"),
-                        moleAtlas.textureNamed("mole_thump2"),
-                        moleAtlas.textureNamed("mole_thump3"),
-                        moleAtlas.textureNamed("mole_thump4")
+            moleAtlas.textureNamed("mole_thump2"),
+            moleAtlas.textureNamed("mole_thump3"),
+            moleAtlas.textureNamed("mole_thump4")
         ]
-
-
+        
+        
     }
     
     /**
@@ -249,7 +323,7 @@ class GameScene: SKScene {
         
         let queue:dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
         
-         let weakSelf = self
+        let weakSelf = self
         
         
         dispatch_async(queue) { () -> Void in

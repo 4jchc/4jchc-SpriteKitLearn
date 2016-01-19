@@ -10,15 +10,12 @@ import UIKit
 import SpriteKit
 
 class Mole: SKSpriteNode {
-    
+    /** 鼹鼠出洞动画组 */
     var laughAction:SKAction!
-    
+    /** 鼹鼠被打动画组 */
     var thumpAction:SKAction!
-    
-    
     /** 被打了标记 */
     var beThumped = false
-    
     /** 隐藏时的Y值 */
     var hiddenY = CGFloat()
     
@@ -53,7 +50,7 @@ class Mole: SKSpriteNode {
         return mole
     }
     
-
+    
     
     //MARK: - 鼹鼠动画，先向上出现，停留0.5秒后，再隐藏
     ///  鼹鼠动画，先向上出现，停留0.5秒后，再隐藏
@@ -99,4 +96,13 @@ class Mole: SKSpriteNode {
         }
         
     }
+    //MARK: - 停止鼹鼠动画
+    ///  停止鼹鼠动画
+    func stopAction(){
+        
+        // 1. 删除所有操作
+        self.removeAllActions()
+    }
+    
+    
 }
