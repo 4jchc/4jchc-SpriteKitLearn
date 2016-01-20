@@ -7,7 +7,7 @@
 //
 import UIKit
 import SpriteKit
-//多线程加载素材实现鼹鼠笑动画及声音
+
 class GameScene: SKScene {
     
     // 用来调整动画速度
@@ -15,9 +15,9 @@ class GameScene: SKScene {
     // 根据分数来加速
     static var speed = 0;
     // 判断游戏结束
-    var gameOverNum = 10;
+    var gameOverNum = 3;
     
-    
+
     
     // 得分标签
     var _scoreLabel:SKLabelNode!
@@ -47,8 +47,7 @@ class GameScene: SKScene {
     
     // 鼹鼠数组
     var _moles:NSArray!
-    
-    
+
     /// 1.定义闭包
     typealias AssetLoadCompletionHandler = () -> Void
     
@@ -135,7 +134,7 @@ class GameScene: SKScene {
         _loseLabel.text = "Lose: 0";
         _loseLabel.fontSize = kFontSize;
         _loseLabel.fontColor = SKColor.redColor()
-                let loseX:CGFloat   = (IS_IPAD ? (260) : (20));
+                let loseX:CGFloat   = (IS_IPAD ? (260) : (90));
                 let loseY:CGFloat   = (IS_IPAD ? (20) : (20));
                 _loseLabel.position = CGPointMake(loseX, loseY);
        // _loseLabel.position = CGPointMake(99, 20);
@@ -143,25 +142,7 @@ class GameScene: SKScene {
         _loseLabel.zPosition = 4;
         
         self.addChild(_loseLabel)
-        
-        //        //6.添加note标签
-        //
-        //        _noteLabel = SKLabelNode(fontNamed: "Chalkduster")
-        //        _noteLabel.fontSize = (IS_IPAD ? 80 : 60);
-        //        _noteLabel.fontColor = SKColor.redColor()
-        ////        let noteX:CGFloat  = (IS_IPAD ? (260) : (self.size.width / 2.0 - 40));
-        ////        let noteY:CGFloat  = (IS_IPAD ? (200) : (200));
-        ////        _noteLabel.position = CGPointMake(noteX, noteY);
-        ////
-        //
-        //        _noteLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Center
-        //        _noteLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Center;
-        //        _noteLabel.zPosition = 4;
-        //
-        //        self.addChild(_noteLabel)
-        
-        
-        // 添加通知监听，监听用户登录成功
+        // 添加通知监听
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "newStart", name: "ChongXinKaiShi", object: nil)
         
     }
@@ -250,10 +231,9 @@ class GameScene: SKScene {
             
             (_moles[i] as! Mole).stopAction()
         }
-        
-        
+
         // 通知在不需要的时候，要及时销毁
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: "tongzhi", object: nil)
+        //NSNotificationCenter.defaultCenter().removeObserver(self, name: "tongzhi", object: nil)
     }
     
     func isGameOver(){
@@ -266,6 +246,8 @@ class GameScene: SKScene {
             _lose = 0;
             self.stopGame()
             _isGameOver = true
+            let tongzhi = "tongzhi"
+            NSNotificationCenter.defaultCenter().postNotificationName(tongzhi, object:nil,userInfo: ["_isGameOver":_isGameOver])
         }
     }
     
@@ -298,13 +280,7 @@ class GameScene: SKScene {
                 _loseLabel.text = NSString(format: "Lose: %d", _lose) as String
                 
                 self.isGameOver()
-                if (_isGameOver == true) {
-                    
-                    let tongzhi = "tongzhi"
-                    NSNotificationCenter.defaultCenter().postNotificationName(tongzhi, object:nil,userInfo: ["_isGameOver":_isGameOver])
-                    self.stopGame()
-                }
-                
+
             }
         }
     }
@@ -314,11 +290,10 @@ class GameScene: SKScene {
         steps++;
         //当游戏结束时停止更新时钟
         if (_isGameOver == true) {
-            
+
             return
         }
-        
-        
+
         // 更新时钟标签
         let dt:Int = Int(NSDate().timeIntervalSinceDate(_startTime))
         _timerLabel.text = NSString(format: "%02d:%02d:%02d", dt / 3600, (dt % 3600) / 60, dt % 60) as String
@@ -382,6 +357,7 @@ class GameScene: SKScene {
         
     }
     
+    
     /**
      *  加载场景需要使用的素材
      *
@@ -392,10 +368,7 @@ class GameScene: SKScene {
         
         
         let queue:dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-        
         let weakSelf = self
-        
-        
         dispatch_async(queue) { () -> Void in
             
             //处理耗时操作的代码块...
@@ -410,11 +383,12 @@ class GameScene: SKScene {
         }
     }
     
-    
-    
-    
-    
-    
+
+    deinit{
+        // 通知在不需要的时候，要及时销毁
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        print("**\(super.classForCoder)--已销毁")
+    }
     
 }
 

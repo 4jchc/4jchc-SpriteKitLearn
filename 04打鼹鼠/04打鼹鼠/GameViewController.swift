@@ -10,6 +10,7 @@ import UIKit
 import SpriteKit
 class GameViewController: UIViewController {
     
+    var gamescen:GameScene!
     @IBOutlet weak var start: UIButton!
     
     @IBAction func startG() {
@@ -33,28 +34,14 @@ class GameViewController: UIViewController {
         if r == true{
             stackview.hidden = false
         }
-        NSNotificationCenter.defaultCenter().removeObserver("")
+
     }
     
-    
-    
-    
-    
-    /// 1.定义闭包
-    typealias StartGameCompletionHandler = () -> Void
-    static func startWithBlocl(block:StartGameCompletionHandler?){
-        
-        if block != nil{
-            //因为回调函数涉及到实例化场景以及展现，因此需要在主线程执行
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                NSLog("实例化场景2： %@", NSThread.currentThread());
-                block!();
-            })
-        }
-        
-        
+    deinit{
+        // 通知在不需要的时候，要及时销毁
+         NSNotificationCenter.defaultCenter().removeObserver(self, name: "tongzhi", object: nil)
+        print("**\(super.classForCoder)--已销毁")
     }
-    
     
     var _isStarted = false
     override func viewDidLoad() {

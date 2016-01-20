@@ -20,8 +20,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ACd-Bb-JWJ">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <subviews>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jYF-dR-TMn">
-                                        <rect key="frame" x="209" y="251" width="183" height="78"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="jYF-dR-TMn">
+                                        <rect key="frame" x="209" y="251" width="183" height="101"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Game Over!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypf-4g-UhF">
                                                 <rect key="frame" x="0.0" y="0.0" width="183" height="35"/>
@@ -32,32 +32,21 @@
                                                     <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="54"/>
                                                 </variation>
                                             </label>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zxw-Gv-9S3">
-                                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="tKp-II-F3L"/>
-                                                    <constraint firstAttribute="width" constant="40" id="vJo-6a-G63"/>
-                                                </constraints>
-                                                <color key="color" red="1" green="0.075982618850000003" blue="0.06571433132" alpha="1" colorSpace="calibratedRGB"/>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="tKp-II-F3L"/>
-                                                        <exclude reference="vJo-6a-G63"/>
-                                                    </mask>
-                                                </variation>
-                                                <variation key="heightClass=regular-widthClass=regular">
-                                                    <mask key="constraints">
-                                                        <include reference="tKp-II-F3L"/>
-                                                        <include reference="vJo-6a-G63"/>
-                                                    </mask>
-                                                </variation>
-                                            </activityIndicatorView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfh-Bn-av9">
-                                                <rect key="frame" x="60" y="35" width="63" height="43"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="我是ipad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubP-dO-cQl">
+                                                <rect key="frame" x="58" y="36" width="67" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.91293766361256545" green="0.60018361488493577" blue="0.074441705142546916" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfh-Bn-av9">
+                                                <rect key="frame" x="60" y="58" width="63" height="43"/>
                                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="24"/>
                                                 <state key="normal" title="start">
                                                     <color key="titleColor" red="0.94154158659999998" green="0.26528185040000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <variation key="heightClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="60" y="36" width="63" height="43"/>
+                                                </variation>
                                                 <variation key="heightClass=regular-widthClass=regular">
                                                     <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="55"/>
                                                 </variation>
@@ -65,32 +54,44 @@
                                                     <action selector="startG" destination="BV1-FR-VrT" eventType="touchUpInside" id="7x0-Sp-OpP"/>
                                                 </connections>
                                             </button>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OUf-Cs-3w1">
-                                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
-                                                <color key="color" red="1" green="0.075982618850000003" blue="0.06571433132" alpha="1" colorSpace="calibratedRGB"/>
-                                            </activityIndicatorView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是iphone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRX-tg-QHF">
+                                                <rect key="frame" x="49" y="78" width="86" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.94807346199999998" green="0.41645440189999999" blue="0.17773689640000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="49" y="80" width="86" height="21"/>
+                                                </variation>
+                                            </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="OUf-Cs-3w1" firstAttribute="leading" secondItem="zxw-Gv-9S3" secondAttribute="leading" id="3X9-TQ-m83"/>
                                             <constraint firstItem="Wfh-Bn-av9" firstAttribute="centerX" secondItem="ypf-4g-UhF" secondAttribute="centerX" id="Ksh-Cu-12K"/>
                                             <constraint firstItem="Wfh-Bn-av9" firstAttribute="top" secondItem="ypf-4g-UhF" secondAttribute="bottom" id="mas-3f-AGG"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="subviews">
-                                                <exclude reference="OUf-Cs-3w1"/>
-                                            </mask>
-                                            <mask key="constraints">
-                                                <exclude reference="3X9-TQ-m83"/>
+                                                <exclude reference="tRX-tg-QHF"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" alignment="center" axis="vertical" distribution="fill" spacing="20">
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="209" y="141" width="183" height="101"/>
                                             <mask key="subviews">
-                                                <include reference="OUf-Cs-3w1"/>
+                                                <exclude reference="ubP-dO-cQl"/>
+                                                <include reference="tRX-tg-QHF"/>
                                             </mask>
+                                            <mask key="constraints">
+                                                <exclude reference="mas-3f-AGG"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=regular">
+                                            <mask key="constraints">
+                                                <exclude reference="mas-3f-AGG"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" alignment="center" axis="vertical" distribution="equalCentering" spacing="20">
                                             <mask key="constraints">
                                                 <exclude reference="Ksh-Cu-12K"/>
                                                 <exclude reference="mas-3f-AGG"/>
-                                                <include reference="3X9-TQ-m83"/>
                                             </mask>
                                         </variation>
                                     </stackView>
@@ -98,7 +99,9 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="jYF-dR-TMn" secondAttribute="trailing" constant="180" id="CgT-w1-Bvs"/>
-                                    <constraint firstItem="jYF-dR-TMn" firstAttribute="centerY" secondItem="ACd-Bb-JWJ" secondAttribute="centerY" id="ONm-gh-u5c"/>
+                                    <constraint firstItem="jYF-dR-TMn" firstAttribute="centerY" secondItem="ACd-Bb-JWJ" secondAttribute="centerY" id="ONm-gh-u5c">
+                                        <variation key="heightClass=compact" constant="12.5"/>
+                                    </constraint>
                                     <constraint firstItem="jYF-dR-TMn" firstAttribute="centerX" secondItem="ACd-Bb-JWJ" secondAttribute="centerX" id="Owp-BF-Thu">
                                         <variation key="heightClass=regular-widthClass=regular" constant="36.5"/>
                                     </constraint>
@@ -139,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="393" y="283"/>
+            <point key="canvasLocation" x="393" y="282"/>
         </scene>
     </scenes>
 </document>
