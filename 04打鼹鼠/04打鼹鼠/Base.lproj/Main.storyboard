@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8118" systemVersion="15A172" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8098"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="_4打鼹鼠" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
@@ -15,11 +16,130 @@
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ACd-Bb-JWJ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <subviews>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jYF-dR-TMn">
+                                        <rect key="frame" x="209" y="251" width="183" height="78"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Game Over!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypf-4g-UhF">
+                                                <rect key="frame" x="0.0" y="0.0" width="183" height="35"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="27"/>
+                                                <color key="textColor" red="1" green="0.075982618853848161" blue="0.065714331316371721" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="highlightedColor" red="0.47831180670000001" green="0.94807346199999998" blue="0.25509472599999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="54"/>
+                                                </variation>
+                                            </label>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zxw-Gv-9S3">
+                                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="tKp-II-F3L"/>
+                                                    <constraint firstAttribute="width" constant="40" id="vJo-6a-G63"/>
+                                                </constraints>
+                                                <color key="color" red="1" green="0.075982618850000003" blue="0.06571433132" alpha="1" colorSpace="calibratedRGB"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="tKp-II-F3L"/>
+                                                        <exclude reference="vJo-6a-G63"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="tKp-II-F3L"/>
+                                                        <include reference="vJo-6a-G63"/>
+                                                    </mask>
+                                                </variation>
+                                            </activityIndicatorView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfh-Bn-av9">
+                                                <rect key="frame" x="60" y="35" width="63" height="43"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="24"/>
+                                                <state key="normal" title="start">
+                                                    <color key="titleColor" red="0.94154158659999998" green="0.26528185040000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="55"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="startG" destination="BV1-FR-VrT" eventType="touchUpInside" id="7x0-Sp-OpP"/>
+                                                </connections>
+                                            </button>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OUf-Cs-3w1">
+                                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                                <color key="color" red="1" green="0.075982618850000003" blue="0.06571433132" alpha="1" colorSpace="calibratedRGB"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="OUf-Cs-3w1" firstAttribute="leading" secondItem="zxw-Gv-9S3" secondAttribute="leading" id="3X9-TQ-m83"/>
+                                            <constraint firstItem="Wfh-Bn-av9" firstAttribute="centerX" secondItem="ypf-4g-UhF" secondAttribute="centerX" id="Ksh-Cu-12K"/>
+                                            <constraint firstItem="Wfh-Bn-av9" firstAttribute="top" secondItem="ypf-4g-UhF" secondAttribute="bottom" id="mas-3f-AGG"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="OUf-Cs-3w1"/>
+                                            </mask>
+                                            <mask key="constraints">
+                                                <exclude reference="3X9-TQ-m83"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular" alignment="center" axis="vertical" distribution="fill" spacing="20">
+                                            <mask key="subviews">
+                                                <include reference="OUf-Cs-3w1"/>
+                                            </mask>
+                                            <mask key="constraints">
+                                                <exclude reference="Ksh-Cu-12K"/>
+                                                <exclude reference="mas-3f-AGG"/>
+                                                <include reference="3X9-TQ-m83"/>
+                                            </mask>
+                                        </variation>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="jYF-dR-TMn" secondAttribute="trailing" constant="180" id="CgT-w1-Bvs"/>
+                                    <constraint firstItem="jYF-dR-TMn" firstAttribute="centerY" secondItem="ACd-Bb-JWJ" secondAttribute="centerY" id="ONm-gh-u5c"/>
+                                    <constraint firstItem="jYF-dR-TMn" firstAttribute="centerX" secondItem="ACd-Bb-JWJ" secondAttribute="centerX" id="Owp-BF-Thu">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="36.5"/>
+                                    </constraint>
+                                    <constraint firstItem="jYF-dR-TMn" firstAttribute="centerY" secondItem="ACd-Bb-JWJ" secondAttribute="centerY" id="gUS-Fx-fPa"/>
+                                    <constraint firstItem="jYF-dR-TMn" firstAttribute="leading" secondItem="ACd-Bb-JWJ" secondAttribute="leading" constant="254" id="pw3-wF-CLO"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="CgT-w1-Bvs"/>
+                                        <exclude reference="gUS-Fx-fPa"/>
+                                        <exclude reference="pw3-wF-CLO"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="CgT-w1-Bvs"/>
+                                        <exclude reference="ONm-gh-u5c"/>
+                                        <exclude reference="Owp-BF-Thu"/>
+                                        <include reference="gUS-Fx-fPa"/>
+                                        <include reference="pw3-wF-CLO"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ACd-Bb-JWJ" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="aoQ-PU-zmO"/>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="ACd-Bb-JWJ" secondAttribute="bottom" id="ayE-DC-56G"/>
+                            <constraint firstAttribute="trailing" secondItem="ACd-Bb-JWJ" secondAttribute="trailing" id="kNy-Pb-Hv8"/>
+                            <constraint firstItem="ACd-Bb-JWJ" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" id="vYR-61-RhP"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gameover" destination="ypf-4g-UhF" id="voM-e5-bdr"/>
+                        <outlet property="stackview" destination="jYF-dR-TMn" id="LFo-lX-sZI"/>
+                        <outlet property="start" destination="Wfh-Bn-av9" id="N7b-Pb-0Sb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="393" y="283"/>
         </scene>
     </scenes>
 </document>

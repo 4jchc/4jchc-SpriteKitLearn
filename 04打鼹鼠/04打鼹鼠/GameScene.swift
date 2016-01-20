@@ -5,7 +5,7 @@
 //  Created by 蒋进 on 16/1/18.
 //  Copyright (c) 2016年 蒋进. All rights reserved.
 //
-
+import UIKit
 import SpriteKit
 //多线程加载素材实现鼹鼠笑动画及声音
 class GameScene: SKScene {
@@ -15,7 +15,7 @@ class GameScene: SKScene {
     // 根据分数来加速
     static var speed = 0;
     // 判断游戏结束
-    static var gameOver = 10;
+    var gameOverNum = 10;
     
     
     
@@ -105,9 +105,9 @@ class GameScene: SKScene {
         _scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
         _scoreLabel.text = "Score: 0";
         _scoreLabel.fontSize = kFontSize;
-//        let ScoreX:CGFloat = (IS_IPAD ? (20) : (20));
-//        let ScoreY:CGFloat = (IS_IPAD ? (80) : (20));
-//        _scoreLabel.position = CGPointMake(ScoreX, ScoreY);
+        //        let ScoreX:CGFloat = (IS_IPAD ? (20) : (20));
+        //        let ScoreY:CGFloat = (IS_IPAD ? (80) : (20));
+        //        _scoreLabel.position = CGPointMake(ScoreX, ScoreY);
         _scoreLabel.position = CGPointMake(20, 20);
         _scoreLabel.zPosition = 4;
         _scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left;
@@ -121,10 +121,10 @@ class GameScene: SKScene {
         _timerLabel.text = "00:00:00";
         _timerLabel.fontSize = kFontSize
         _timerLabel.zPosition = 4;
-//        let timerX:CGFloat  = (IS_IPAD ? (self.size.width - 160) : (self.size.width - 20));
-//        let timerY:CGFloat  = (IS_IPAD ? (self.size.height - 30 - 160) : (self.size.height - kFontSize - 20));
-//        _timerLabel.position = CGPointMake(timerX, timerY);
-
+        //        let timerX:CGFloat  = (IS_IPAD ? (self.size.width - 160) : (self.size.width - 20));
+        //        let timerY:CGFloat  = (IS_IPAD ? (self.size.height - 30 - 160) : (self.size.height - kFontSize - 20));
+        //        _timerLabel.position = CGPointMake(timerX, timerY);
+        
         _timerLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Right;
         _timerLabel.position = CGPointMake(self.size.width - 20, self.size.height - kFontSize - 20);
         self.addChild(_timerLabel)
@@ -135,28 +135,34 @@ class GameScene: SKScene {
         _loseLabel.text = "Lose: 0";
         _loseLabel.fontSize = kFontSize;
         _loseLabel.fontColor = SKColor.redColor()
-//        let loseX:CGFloat   = (IS_IPAD ? (260) : (20));
-//        let loseY:CGFloat   = (IS_IPAD ? (200) : (20));
-//        _loseLabel.position = CGPointMake(loseX, loseY);
-        _loseLabel.position = CGPointMake(99, 20);
+                let loseX:CGFloat   = (IS_IPAD ? (260) : (20));
+                let loseY:CGFloat   = (IS_IPAD ? (20) : (20));
+                _loseLabel.position = CGPointMake(loseX, loseY);
+       // _loseLabel.position = CGPointMake(99, 20);
         _loseLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left;
         _loseLabel.zPosition = 4;
         
         self.addChild(_loseLabel)
         
-        //6.添加note标签
+        //        //6.添加note标签
+        //
+        //        _noteLabel = SKLabelNode(fontNamed: "Chalkduster")
+        //        _noteLabel.fontSize = (IS_IPAD ? 80 : 60);
+        //        _noteLabel.fontColor = SKColor.redColor()
+        ////        let noteX:CGFloat  = (IS_IPAD ? (260) : (self.size.width / 2.0 - 40));
+        ////        let noteY:CGFloat  = (IS_IPAD ? (200) : (200));
+        ////        _noteLabel.position = CGPointMake(noteX, noteY);
+        ////
+        //
+        //        _noteLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Center
+        //        _noteLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Center;
+        //        _noteLabel.zPosition = 4;
+        //
+        //        self.addChild(_noteLabel)
         
-        _noteLabel = SKLabelNode(fontNamed: "Chalkduster")
-        _noteLabel.fontSize = kFontSize
-        _noteLabel.fontColor = SKColor.redColor()
-        let noteX:CGFloat  = (IS_IPAD ? (260) : (self.size.width / 2.0 - 40));
-        let noteY:CGFloat  = (IS_IPAD ? (200) : (200));
-        _noteLabel.position = CGPointMake(noteX, noteY);
-        _noteLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left;
-        _noteLabel.zPosition = 4;
         
-        self.addChild(_noteLabel)
-        
+        // 添加通知监听，监听用户登录成功
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "newStart", name: "ChongXinKaiShi", object: nil)
         
     }
     
@@ -205,34 +211,79 @@ class GameScene: SKScene {
         
     }
     
-    
-    
-    
-    
-    
     override init(size: CGSize) {
         super.init(size: size)
-        setupUI()
-        loadMoles()
-        setupMoles()
-        _startTime = NSDate()
+        startGame()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func startGame(){
+        
+        setupUI()
+        loadMoles()
+        setupMoles()
+        //记录游戏开始时间
+        _startTime = NSDate()
+        //游戏标识符
+        _isGameOver = false
+
+        
+    }
     
-    //    override func didMoveToView(view: SKView) {
-    //    //        setupUI()
-    //    }
+    func newStart(){
+        loadMoles()
+        setupMoles()
+        _scoreLabel.text = "Score: 0";
+        _timerLabel.text = "00:00:00";
+        _loseLabel.text = "Lose: 0";
+        _startTime = NSDate()
+        _isGameOver = false
+        
+        
+    }
+    func stopGame(){
+        for var i:Int = 0; i < 3; i++ {
+            
+            (_moles[i] as! Mole).stopAction()
+        }
+        
+        
+        // 通知在不需要的时候，要及时销毁
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "tongzhi", object: nil)
+    }
+    
+    func isGameOver(){
+        if (_lose == gameOverNum) {
+            //记录游戏开始时间
+            _startTime = NSDate()
+            //得分
+            _score = 0;
+            //lose计数
+            _lose = 0;
+            self.stopGame()
+            _isGameOver = true
+        }
+    }
+    
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         
         
+        
+        //当游戏结束时停止更新时钟
+        if (_isGameOver == true) {
+            
+            return
+        }
+        //获取到用户打到鼹鼠
         for touch in touches {
             let location = touch.locationInNode(self)
+            //取出用户点击的节点
             let node:SKNode = self.nodeAtPoint(location)
             if node.name == "mole"{
                 
@@ -242,6 +293,18 @@ class GameScene: SKScene {
                 _score += 10;
                 _scoreLabel.text = NSString(format: "Score: %d", _score) as String
                 
+            }else{
+                _lose++;
+                _loseLabel.text = NSString(format: "Lose: %d", _lose) as String
+                
+                self.isGameOver()
+                if (_isGameOver == true) {
+                    
+                    let tongzhi = "tongzhi"
+                    NSNotificationCenter.defaultCenter().postNotificationName(tongzhi, object:nil,userInfo: ["_isGameOver":_isGameOver])
+                    self.stopGame()
+                }
+                
             }
         }
     }
@@ -249,12 +312,19 @@ class GameScene: SKScene {
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         steps++;
+        //当游戏结束时停止更新时钟
+        if (_isGameOver == true) {
+            
+            return
+        }
+        
         
         // 更新时钟标签
         let dt:Int = Int(NSDate().timeIntervalSinceDate(_startTime))
         _timerLabel.text = NSString(format: "%02d:%02d:%02d", dt / 3600, (dt % 3600) / 60, dt % 60) as String
         
-        var seed:Int = (30 - _score / 10)
+        
+        var seed:Int = (20 - _score / 2)
         seed = (seed > 5) ? seed : 5;
         if (steps % seed == 0) {
             
@@ -327,11 +397,11 @@ class GameScene: SKScene {
         
         
         dispatch_async(queue) { () -> Void in
+            
             //处理耗时操作的代码块...
             weakSelf.loadSceneAssets()
             if callback != nil{
-                
-                //操作完成，调用主线程来刷新界面
+                //因为回调函数涉及到实例化场景以及展现，因此需要在主线程执行
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     NSLog("实例化场景2： %@", NSThread.currentThread());
                     callback!();
@@ -339,6 +409,8 @@ class GameScene: SKScene {
             }
         }
     }
+    
+    
     
     
     

@@ -71,6 +71,7 @@ class Mole: SKSpriteNode {
         
         
         self.runAction(sequence)
+    
     }
     
     
@@ -102,7 +103,8 @@ class Mole: SKSpriteNode {
         
         // 1. 删除所有操作
         self.removeAllActions()
+        self.removeFromParent()
     }
-    
+
     
 }
