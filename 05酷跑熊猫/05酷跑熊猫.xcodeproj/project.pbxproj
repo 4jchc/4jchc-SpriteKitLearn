@@ -10,6 +10,8 @@
 		964062AF1C50A7C400A04F8A /* Panda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964062AE1C50A7C400A04F8A /* Panda.swift */; };
 		964062B11C50B40300A04F8A /* Platform平台.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964062B01C50B40300A04F8A /* Platform平台.swift */; };
 		964062B31C50B47500A04F8A /* PlatformFactory平台工厂.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964062B21C50B47500A04F8A /* PlatformFactory平台工厂.swift */; };
+		964062B71C50C3B200A04F8A /* background_f0.png in Resources */ = {isa = PBXBuildFile; fileRef = 964062B41C50C3B200A04F8A /* background_f0.png */; };
+		964062B81C50C3B200A04F8A /* background_f1.png in Resources */ = {isa = PBXBuildFile; fileRef = 964062B51C50C3B200A04F8A /* background_f1.png */; };
 		96F24B5A1C50A245002551CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F24B591C50A245002551CC /* AppDelegate.swift */; };
 		96F24B5C1C50A245002551CC /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 96F24B5B1C50A245002551CC /* GameScene.sks */; };
 		96F24B5E1C50A245002551CC /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F24B5D1C50A245002551CC /* GameScene.swift */; };
@@ -50,6 +52,8 @@
 		964062AE1C50A7C400A04F8A /* Panda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panda.swift; sourceTree = "<group>"; };
 		964062B01C50B40300A04F8A /* Platform平台.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Platform平台.swift"; sourceTree = "<group>"; };
 		964062B21C50B47500A04F8A /* PlatformFactory平台工厂.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlatformFactory平台工厂.swift"; sourceTree = "<group>"; };
+		964062B41C50C3B200A04F8A /* background_f0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_f0.png; sourceTree = "<group>"; };
+		964062B51C50C3B200A04F8A /* background_f1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_f1.png; sourceTree = "<group>"; };
 		96F24B561C50A245002551CC /* 05酷跑熊猫.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "05酷跑熊猫.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F24B591C50A245002551CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96F24B5B1C50A245002551CC /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -100,6 +104,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		964062B61C50C3B200A04F8A /* background */ = {
+			isa = PBXGroup;
+			children = (
+				964062B41C50C3B200A04F8A /* background_f0.png */,
+				964062B51C50C3B200A04F8A /* background_f1.png */,
+			);
+			name = background;
+			path = "/Volumes/t/Users/【黑马15】/AA游戏开发/Swift游戏实战-熊猫跑酷/12 视差滚动背景-实现/panda/panda/background";
+			sourceTree = "<absolute>";
+		};
 		96F24B4D1C50A245002551CC = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +137,7 @@
 		96F24B581C50A245002551CC /* 05酷跑熊猫 */ = {
 			isa = PBXGroup;
 			children = (
+				964062B61C50C3B200A04F8A /* background */,
 				96F24B9D1C50A3BB002551CC /* atlas */,
 				96F24B8B1C50A394002551CC /* sound */,
 				96F24B591C50A245002551CC /* AppDelegate.swift */,
@@ -294,6 +309,8 @@
 				96F24B651C50A245002551CC /* Assets.xcassets in Resources */,
 				96F24B921C50A394002551CC /* hit_platform.mp3 in Resources */,
 				96F24BA31C50A3BB002551CC /* jump_effect.atlas in Resources */,
+				964062B71C50C3B200A04F8A /* background_f0.png in Resources */,
+				964062B81C50C3B200A04F8A /* background_f1.png in Resources */,
 				96F24B631C50A245002551CC /* Main.storyboard in Resources */,
 				96F24BA21C50A3BB002551CC /* jump.atlas in Resources */,
 				96F24BA51C50A3BB002551CC /* run.atlas in Resources */,

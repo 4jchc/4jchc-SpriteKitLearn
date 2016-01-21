@@ -17,12 +17,16 @@ class PlatformFactory: SKNode {
     let textureRight = SKTexture(imageNamed: "platform_r")
     //平台数组
     var platforms = [Platform]()
+
+    var sceneWidth :CGFloat = 0
+    //子类实现代理
+    var delegate:ProtocolMainScene?
     
     //创建平台
     func createPlatform(midNum:UInt32,x:CGFloat,y:CGFloat){
         
         let platform = Platform()
-        
+        // 节点添加纹理图
         let platform_left = SKSpriteNode(texture: textureLeft)
         platform_left.anchorPoint = CGPointMake(0, 0.9)
         
@@ -45,12 +49,35 @@ class PlatformFactory: SKNode {
         self.addChild(platform)
         
         platforms.append(platform)
+        //MARK:  代理执行方法
+        //通用公式：平台的长度+x坐标 - 主场景的宽度
+        delegate?.onGetData(platform.width + x - sceneWidth)
         
     }
+    //随机
+    func createPlatformRandom(){
+        //随机平台的长度
+        let midNum:UInt32 = arc4random()%4 + 1
+        //随机间隔
+        let gap:CGFloat = CGFloat(arc4random()%8 + 1)
+        //x坐标
+        let x:CGFloat = self.sceneWidth + CGFloat( midNum*50 ) + gap + 100
+        //y坐标
+        let y:CGFloat = CGFloat(arc4random()%200 + 200)
+        
+        createPlatform(midNum, x: x, y: y)
+        
+        
+    }
+    
     //移动平台--遍历平台数组然后移动平台位置
     func move(speed:CGFloat){
         for p in platforms{
             p.position.x -= speed
+        }
+        if platforms[0].position.x < -platforms[0].width {
+            platforms[0].removeFromParent()
+            platforms.removeAtIndex(0)
         }
     }
 

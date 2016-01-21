@@ -13,7 +13,7 @@ class Platform: SKNode {
     var width:CGFloat = 0.0
     var height:CGFloat = 10.0
 
-    //创建平台
+    //通过节点数组创建平台
     func onCreate(arrSprite:[SKSpriteNode]){
         
         for platform in arrSprite {

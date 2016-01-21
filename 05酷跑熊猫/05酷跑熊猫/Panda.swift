@@ -15,7 +15,7 @@ enum Status :Int{
 }
 
 class Panda: SKSpriteNode {
-
+    
     
     
     //定义跑，跳，滚动等动作动画
@@ -30,7 +30,7 @@ class Panda: SKSpriteNode {
     let rollAtlas = SKTextureAtlas(named: "roll.atlas")
     var rollFrames = [SKTexture]()
     
-     var status = Status.run
+    var status = Status.run
     
     
     init(){
@@ -66,18 +66,18 @@ class Panda: SKSpriteNode {
             rollFrames.append(rollTexture)
             
         }
-
+        
         
         
     }
     
     
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-
+    
     func run(){
         //清楚所有动作
         self.removeAllActions()
@@ -98,6 +98,6 @@ class Panda: SKSpriteNode {
         self.runAction(SKAction.animateWithTextures(rollFrames, timePerFrame: 0.05),completion:{
             () in
             self.run()
-            })
+        })
     }
 }
