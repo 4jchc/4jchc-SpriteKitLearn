@@ -16,6 +16,14 @@
 		96F24B681C50A245002551CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F24B661C50A245002551CC /* LaunchScreen.storyboard */; };
 		96F24B731C50A245002551CC /* _5____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F24B721C50A245002551CC /* _5____Tests.swift */; };
 		96F24B7E1C50A246002551CC /* _5____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F24B7D1C50A246002551CC /* _5____UITests.swift */; };
+		96F24B901C50A394002551CC /* apple.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96F24B8C1C50A394002551CC /* apple.mp3 */; };
+		96F24B911C50A394002551CC /* hit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96F24B8D1C50A394002551CC /* hit.mp3 */; };
+		96F24B921C50A394002551CC /* hit_platform.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96F24B8E1C50A394002551CC /* hit_platform.mp3 */; };
+		96F24B931C50A394002551CC /* lose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96F24B8F1C50A394002551CC /* lose.mp3 */; };
+		96F24BA21C50A3BB002551CC /* jump.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 96F24B9E1C50A3BB002551CC /* jump.atlas */; };
+		96F24BA31C50A3BB002551CC /* jump_effect.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 96F24B9F1C50A3BB002551CC /* jump_effect.atlas */; };
+		96F24BA41C50A3BB002551CC /* roll.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 96F24BA01C50A3BB002551CC /* roll.atlas */; };
+		96F24BA51C50A3BB002551CC /* run.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 96F24BA11C50A3BB002551CC /* run.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +59,14 @@
 		96F24B791C50A245002551CC /* 05酷跑熊猫UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "05酷跑熊猫UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F24B7D1C50A246002551CC /* _5____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_5____UITests.swift"; sourceTree = "<group>"; };
 		96F24B7F1C50A246002551CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96F24B8C1C50A394002551CC /* apple.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = apple.mp3; sourceTree = "<group>"; };
+		96F24B8D1C50A394002551CC /* hit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit.mp3; sourceTree = "<group>"; };
+		96F24B8E1C50A394002551CC /* hit_platform.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit_platform.mp3; sourceTree = "<group>"; };
+		96F24B8F1C50A394002551CC /* lose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lose.mp3; sourceTree = "<group>"; };
+		96F24B9E1C50A3BB002551CC /* jump.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = jump.atlas; sourceTree = "<group>"; };
+		96F24B9F1C50A3BB002551CC /* jump_effect.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = jump_effect.atlas; sourceTree = "<group>"; };
+		96F24BA01C50A3BB002551CC /* roll.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = roll.atlas; sourceTree = "<group>"; };
+		96F24BA11C50A3BB002551CC /* run.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = run.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +117,8 @@
 		96F24B581C50A245002551CC /* 05酷跑熊猫 */ = {
 			isa = PBXGroup;
 			children = (
+				96F24B9D1C50A3BB002551CC /* atlas */,
+				96F24B8B1C50A394002551CC /* sound */,
 				96F24B591C50A245002551CC /* AppDelegate.swift */,
 				96F24B5B1C50A245002551CC /* GameScene.sks */,
 				96F24B5D1C50A245002551CC /* GameScene.swift */,
@@ -129,6 +147,28 @@
 				96F24B7F1C50A246002551CC /* Info.plist */,
 			);
 			path = "05酷跑熊猫UITests";
+			sourceTree = "<group>";
+		};
+		96F24B8B1C50A394002551CC /* sound */ = {
+			isa = PBXGroup;
+			children = (
+				96F24B8C1C50A394002551CC /* apple.mp3 */,
+				96F24B8D1C50A394002551CC /* hit.mp3 */,
+				96F24B8E1C50A394002551CC /* hit_platform.mp3 */,
+				96F24B8F1C50A394002551CC /* lose.mp3 */,
+			);
+			path = sound;
+			sourceTree = "<group>";
+		};
+		96F24B9D1C50A3BB002551CC /* atlas */ = {
+			isa = PBXGroup;
+			children = (
+				96F24B9E1C50A3BB002551CC /* jump.atlas */,
+				96F24B9F1C50A3BB002551CC /* jump_effect.atlas */,
+				96F24BA01C50A3BB002551CC /* roll.atlas */,
+				96F24BA11C50A3BB002551CC /* run.atlas */,
+			);
+			path = atlas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,10 +278,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F24B911C50A394002551CC /* hit.mp3 in Resources */,
+				96F24B931C50A394002551CC /* lose.mp3 in Resources */,
 				96F24B5C1C50A245002551CC /* GameScene.sks in Resources */,
 				96F24B681C50A245002551CC /* LaunchScreen.storyboard in Resources */,
 				96F24B651C50A245002551CC /* Assets.xcassets in Resources */,
+				96F24B921C50A394002551CC /* hit_platform.mp3 in Resources */,
+				96F24BA31C50A3BB002551CC /* jump_effect.atlas in Resources */,
 				96F24B631C50A245002551CC /* Main.storyboard in Resources */,
+				96F24BA21C50A3BB002551CC /* jump.atlas in Resources */,
+				96F24BA51C50A3BB002551CC /* run.atlas in Resources */,
+				96F24BA41C50A3BB002551CC /* roll.atlas in Resources */,
+				96F24B901C50A394002551CC /* apple.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
