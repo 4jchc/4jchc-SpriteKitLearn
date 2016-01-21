@@ -12,17 +12,26 @@ protocol ProtocolMainScene{
     func onGetData(dist:CGFloat)
 }
 
-class GameScene: SKScene,ProtocolMainScene {
+class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
+    
     //懒加载
     lazy var panda = Panda()
     lazy var platformFactory = PlatformFactory()
     lazy var bg = BackGround()
+    
     //移动速度
     var moveSpeed:CGFloat = 15
-    
     var lastDis:CGFloat = 0.0
 
-
+    //碰撞检测函数
+    func didBeginContact(contact: SKPhysicsContact) {
+        //如果熊猫和场景边缘碰撞
+        if (contact.bodyA.categoryBitMask|contact.bodyB.categoryBitMask) == (BitMaskType.scene | BitMaskType.panda) {
+            
+            print("游戏结束")
+        }
+    }
+    
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -32,6 +41,17 @@ class GameScene: SKScene,ProtocolMainScene {
         // 添加背景
         self.addChild(bg)
         bg.zPosition=20
+        
+        
+        //设置物理碰撞代理
+        self.physicsWorld.contactDelegate = self
+        //重力
+        self.physicsWorld.gravity = CGVectorMake(0, -5)
+        self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
+        self.physicsBody!.categoryBitMask = BitMaskType.scene
+        //产生碰撞后重力不会飞来飞去
+        self.physicsBody!.dynamic = false
+        
         
         // 添加熊猫
         panda.position = CGPointMake(200, 400)

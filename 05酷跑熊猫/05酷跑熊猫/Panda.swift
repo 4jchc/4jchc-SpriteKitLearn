@@ -67,7 +67,16 @@ class Panda: SKSpriteNode {
             
         }
         
-        
+        self.physicsBody = SKPhysicsBody(rectangleOfSize:texture.size())
+        self.physicsBody!.dynamic = true
+        self.physicsBody!.allowsRotation = false
+        //摩擦力
+        self.physicsBody!.restitution = 0
+        // 类别掩码(CategoryBitmask)
+        self.physicsBody!.categoryBitMask = BitMaskType.panda
+        // 碰撞掩码(CollisionBitmask),
+        self.physicsBody!.contactTestBitMask = BitMaskType.scene
+        run()
         
     }
     
