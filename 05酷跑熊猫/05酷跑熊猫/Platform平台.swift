@@ -32,7 +32,6 @@ class Platform: SKNode {
         self.physicsBody!.restitution = 0
         // 类别掩码(CategoryBitmask)
         self.physicsBody!.categoryBitMask = BitMaskType.platform
-        // 碰撞掩码(CollisionBitmask),
-        self.physicsBody!.contactTestBitMask = <#BitMaskType.scene#>
+
     }
 }

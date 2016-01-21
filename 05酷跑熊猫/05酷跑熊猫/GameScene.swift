@@ -30,6 +30,12 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
             
             print("游戏结束")
         }
+        // 熊猫和台子碰撞
+        if (contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask) == (BitMaskType.platform | BitMaskType.panda){
+            panda.run()
+            
+        }
+        
     }
     
     

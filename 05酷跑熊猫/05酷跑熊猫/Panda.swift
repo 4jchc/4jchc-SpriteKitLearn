@@ -50,6 +50,7 @@ class Panda: SKSpriteNode {
         }
         //跳
         for var i = 1; i<=jumpAtlas.textureNames.count; i++ {
+            
             let tempName = String(format: "panda_jump_%.2d", i)
             let jumpTexture = jumpAtlas.textureNamed(tempName)
             
@@ -103,8 +104,15 @@ class Panda: SKSpriteNode {
     
     func jump (){
         self.removeAllActions()
-        status = .jump
-        self.runAction(SKAction.animateWithTextures(jumpFrames, timePerFrame: 0.05))
+        if status != Status.jump2 {
+            self.runAction(SKAction.animateWithTextures(jumpFrames, timePerFrame: 0.05))
+            self.physicsBody!.velocity = CGVectorMake(0, 450)
+            if status == Status.jump {
+                status = Status.jump2
+            }else{
+                status = Status.jump
+            }
+        }
     }
     
     func roll(){
