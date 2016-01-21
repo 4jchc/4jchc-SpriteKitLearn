@@ -7,8 +7,9 @@
 //
 
 import UIKit
-//05酷跑熊猫-02添加素材
+//🐻酷跑熊猫-03定义跑，跳，滚动等动作动画
 import SpriteKit
+
 enum Status :Int{
     case run = 1, jump, jump2,roll
 }
