@@ -1,0 +1,520 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		96F24B5A1C50A245002551CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F24B591C50A245002551CC /* AppDelegate.swift */; };
+		96F24B5C1C50A245002551CC /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 96F24B5B1C50A245002551CC /* GameScene.sks */; };
+		96F24B5E1C50A245002551CC /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F24B5D1C50A245002551CC /* GameScene.swift */; };
+		96F24B601C50A245002551CC /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F24B5F1C50A245002551CC /* GameViewController.swift */; };
+		96F24B631C50A245002551CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F24B611C50A245002551CC /* Main.storyboard */; };
+		96F24B651C50A245002551CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96F24B641C50A245002551CC /* Assets.xcassets */; };
+		96F24B681C50A245002551CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F24B661C50A245002551CC /* LaunchScreen.storyboard */; };
+		96F24B731C50A245002551CC /* _5____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F24B721C50A245002551CC /* _5____Tests.swift */; };
+		96F24B7E1C50A246002551CC /* _5____UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F24B7D1C50A246002551CC /* _5____UITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		96F24B6F1C50A245002551CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96F24B4E1C50A245002551CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96F24B551C50A245002551CC;
+			remoteInfo = "05酷跑熊猫";
+		};
+		96F24B7A1C50A245002551CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96F24B4E1C50A245002551CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96F24B551C50A245002551CC;
+			remoteInfo = "05酷跑熊猫";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		96F24B561C50A245002551CC /* 05酷跑熊猫.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "05酷跑熊猫.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96F24B591C50A245002551CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		96F24B5B1C50A245002551CC /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		96F24B5D1C50A245002551CC /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		96F24B5F1C50A245002551CC /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		96F24B621C50A245002551CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		96F24B641C50A245002551CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96F24B671C50A245002551CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		96F24B691C50A245002551CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96F24B6E1C50A245002551CC /* 05酷跑熊猫Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "05酷跑熊猫Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96F24B721C50A245002551CC /* _5____Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_5____Tests.swift"; sourceTree = "<group>"; };
+		96F24B741C50A245002551CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96F24B791C50A245002551CC /* 05酷跑熊猫UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "05酷跑熊猫UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96F24B7D1C50A246002551CC /* _5____UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_5____UITests.swift"; sourceTree = "<group>"; };
+		96F24B7F1C50A246002551CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96F24B531C50A245002551CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96F24B6B1C50A245002551CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96F24B761C50A245002551CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		96F24B4D1C50A245002551CC = {
+			isa = PBXGroup;
+			children = (
+				96F24B581C50A245002551CC /* 05酷跑熊猫 */,
+				96F24B711C50A245002551CC /* 05酷跑熊猫Tests */,
+				96F24B7C1C50A245002551CC /* 05酷跑熊猫UITests */,
+				96F24B571C50A245002551CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		96F24B571C50A245002551CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96F24B561C50A245002551CC /* 05酷跑熊猫.app */,
+				96F24B6E1C50A245002551CC /* 05酷跑熊猫Tests.xctest */,
+				96F24B791C50A245002551CC /* 05酷跑熊猫UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96F24B581C50A245002551CC /* 05酷跑熊猫 */ = {
+			isa = PBXGroup;
+			children = (
+				96F24B591C50A245002551CC /* AppDelegate.swift */,
+				96F24B5B1C50A245002551CC /* GameScene.sks */,
+				96F24B5D1C50A245002551CC /* GameScene.swift */,
+				96F24B5F1C50A245002551CC /* GameViewController.swift */,
+				96F24B611C50A245002551CC /* Main.storyboard */,
+				96F24B641C50A245002551CC /* Assets.xcassets */,
+				96F24B661C50A245002551CC /* LaunchScreen.storyboard */,
+				96F24B691C50A245002551CC /* Info.plist */,
+			);
+			path = "05酷跑熊猫";
+			sourceTree = "<group>";
+		};
+		96F24B711C50A245002551CC /* 05酷跑熊猫Tests */ = {
+			isa = PBXGroup;
+			children = (
+				96F24B721C50A245002551CC /* _5____Tests.swift */,
+				96F24B741C50A245002551CC /* Info.plist */,
+			);
+			path = "05酷跑熊猫Tests";
+			sourceTree = "<group>";
+		};
+		96F24B7C1C50A245002551CC /* 05酷跑熊猫UITests */ = {
+			isa = PBXGroup;
+			children = (
+				96F24B7D1C50A246002551CC /* _5____UITests.swift */,
+				96F24B7F1C50A246002551CC /* Info.plist */,
+			);
+			path = "05酷跑熊猫UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96F24B551C50A245002551CC /* 05酷跑熊猫 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96F24B821C50A246002551CC /* Build configuration list for PBXNativeTarget "05酷跑熊猫" */;
+			buildPhases = (
+				96F24B521C50A245002551CC /* Sources */,
+				96F24B531C50A245002551CC /* Frameworks */,
+				96F24B541C50A245002551CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "05酷跑熊猫";
+			productName = "05酷跑熊猫";
+			productReference = 96F24B561C50A245002551CC /* 05酷跑熊猫.app */;
+			productType = "com.apple.product-type.application";
+		};
+		96F24B6D1C50A245002551CC /* 05酷跑熊猫Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96F24B851C50A246002551CC /* Build configuration list for PBXNativeTarget "05酷跑熊猫Tests" */;
+			buildPhases = (
+				96F24B6A1C50A245002551CC /* Sources */,
+				96F24B6B1C50A245002551CC /* Frameworks */,
+				96F24B6C1C50A245002551CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96F24B701C50A245002551CC /* PBXTargetDependency */,
+			);
+			name = "05酷跑熊猫Tests";
+			productName = "05酷跑熊猫Tests";
+			productReference = 96F24B6E1C50A245002551CC /* 05酷跑熊猫Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		96F24B781C50A245002551CC /* 05酷跑熊猫UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96F24B881C50A246002551CC /* Build configuration list for PBXNativeTarget "05酷跑熊猫UITests" */;
+			buildPhases = (
+				96F24B751C50A245002551CC /* Sources */,
+				96F24B761C50A245002551CC /* Frameworks */,
+				96F24B771C50A245002551CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96F24B7B1C50A245002551CC /* PBXTargetDependency */,
+			);
+			name = "05酷跑熊猫UITests";
+			productName = "05酷跑熊猫UITests";
+			productReference = 96F24B791C50A245002551CC /* 05酷跑熊猫UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96F24B4E1C50A245002551CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "蒋进";
+				TargetAttributes = {
+					96F24B551C50A245002551CC = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = V68ZXL6SFQ;
+					};
+					96F24B6D1C50A245002551CC = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = V68ZXL6SFQ;
+						TestTargetID = 96F24B551C50A245002551CC;
+					};
+					96F24B781C50A245002551CC = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = V68ZXL6SFQ;
+						TestTargetID = 96F24B551C50A245002551CC;
+					};
+				};
+			};
+			buildConfigurationList = 96F24B511C50A245002551CC /* Build configuration list for PBXProject "05酷跑熊猫" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 96F24B4D1C50A245002551CC;
+			productRefGroup = 96F24B571C50A245002551CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96F24B551C50A245002551CC /* 05酷跑熊猫 */,
+				96F24B6D1C50A245002551CC /* 05酷跑熊猫Tests */,
+				96F24B781C50A245002551CC /* 05酷跑熊猫UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96F24B541C50A245002551CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96F24B5C1C50A245002551CC /* GameScene.sks in Resources */,
+				96F24B681C50A245002551CC /* LaunchScreen.storyboard in Resources */,
+				96F24B651C50A245002551CC /* Assets.xcassets in Resources */,
+				96F24B631C50A245002551CC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96F24B6C1C50A245002551CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96F24B771C50A245002551CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96F24B521C50A245002551CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96F24B5E1C50A245002551CC /* GameScene.swift in Sources */,
+				96F24B601C50A245002551CC /* GameViewController.swift in Sources */,
+				96F24B5A1C50A245002551CC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96F24B6A1C50A245002551CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96F24B731C50A245002551CC /* _5____Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96F24B751C50A245002551CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96F24B7E1C50A246002551CC /* _5____UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		96F24B701C50A245002551CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96F24B551C50A245002551CC /* 05酷跑熊猫 */;
+			targetProxy = 96F24B6F1C50A245002551CC /* PBXContainerItemProxy */;
+		};
+		96F24B7B1C50A245002551CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96F24B551C50A245002551CC /* 05酷跑熊猫 */;
+			targetProxy = 96F24B7A1C50A245002551CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		96F24B611C50A245002551CC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96F24B621C50A245002551CC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		96F24B661C50A245002551CC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96F24B671C50A245002551CC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		96F24B801C50A246002551CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		96F24B811C50A246002551CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		96F24B831C50A246002551CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "05酷跑熊猫/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.-5----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		96F24B841C50A246002551CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "05酷跑熊猫/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.-5----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		96F24B861C50A246002551CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "05酷跑熊猫Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.-5----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/05酷跑熊猫.app/05酷跑熊猫";
+			};
+			name = Debug;
+		};
+		96F24B871C50A246002551CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "05酷跑熊猫Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.-5----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/05酷跑熊猫.app/05酷跑熊猫";
+			};
+			name = Release;
+		};
+		96F24B891C50A246002551CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "05酷跑熊猫UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.-5----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "05酷跑熊猫";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		96F24B8A1C50A246002551CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "05酷跑熊猫UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-jchc.-5----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "05酷跑熊猫";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96F24B511C50A245002551CC /* Build configuration list for PBXProject "05酷跑熊猫" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96F24B801C50A246002551CC /* Debug */,
+				96F24B811C50A246002551CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96F24B821C50A246002551CC /* Build configuration list for PBXNativeTarget "05酷跑熊猫" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96F24B831C50A246002551CC /* Debug */,
+				96F24B841C50A246002551CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		96F24B851C50A246002551CC /* Build configuration list for PBXNativeTarget "05酷跑熊猫Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96F24B861C50A246002551CC /* Debug */,
+				96F24B871C50A246002551CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		96F24B881C50A246002551CC /* Build configuration list for PBXNativeTarget "05酷跑熊猫UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96F24B891C50A246002551CC /* Debug */,
+				96F24B8A1C50A246002551CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96F24B4E1C50A245002551CC /* Project object */;
+}
