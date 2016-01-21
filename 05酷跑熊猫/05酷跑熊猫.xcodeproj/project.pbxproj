@@ -12,6 +12,7 @@
 		964062B31C50B47500A04F8A /* PlatformFactory平台工厂.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964062B21C50B47500A04F8A /* PlatformFactory平台工厂.swift */; };
 		964062B71C50C3B200A04F8A /* background_f0.png in Resources */ = {isa = PBXBuildFile; fileRef = 964062B41C50C3B200A04F8A /* background_f0.png */; };
 		964062B81C50C3B200A04F8A /* background_f1.png in Resources */ = {isa = PBXBuildFile; fileRef = 964062B51C50C3B200A04F8A /* background_f1.png */; };
+		964062BC1C50C89200A04F8A /* BackGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964062BB1C50C89200A04F8A /* BackGround.swift */; };
 		96F24B5A1C50A245002551CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F24B591C50A245002551CC /* AppDelegate.swift */; };
 		96F24B5C1C50A245002551CC /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 96F24B5B1C50A245002551CC /* GameScene.sks */; };
 		96F24B5E1C50A245002551CC /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F24B5D1C50A245002551CC /* GameScene.swift */; };
@@ -54,6 +55,7 @@
 		964062B21C50B47500A04F8A /* PlatformFactory平台工厂.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlatformFactory平台工厂.swift"; sourceTree = "<group>"; };
 		964062B41C50C3B200A04F8A /* background_f0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_f0.png; sourceTree = "<group>"; };
 		964062B51C50C3B200A04F8A /* background_f1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_f1.png; sourceTree = "<group>"; };
+		964062BB1C50C89200A04F8A /* BackGround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackGround.swift; sourceTree = "<group>"; };
 		96F24B561C50A245002551CC /* 05酷跑熊猫.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "05酷跑熊猫.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F24B591C50A245002551CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96F24B5B1C50A245002551CC /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				964062AE1C50A7C400A04F8A /* Panda.swift */,
 				964062B01C50B40300A04F8A /* Platform平台.swift */,
 				964062B21C50B47500A04F8A /* PlatformFactory平台工厂.swift */,
+				964062BB1C50C89200A04F8A /* BackGround.swift */,
 				96F24B5B1C50A245002551CC /* GameScene.sks */,
 				96F24B5D1C50A245002551CC /* GameScene.swift */,
 				96F24B5F1C50A245002551CC /* GameViewController.swift */,
@@ -344,6 +347,7 @@
 				964062B31C50B47500A04F8A /* PlatformFactory平台工厂.swift in Sources */,
 				96F24B601C50A245002551CC /* GameViewController.swift in Sources */,
 				964062AF1C50A7C400A04F8A /* Panda.swift in Sources */,
+				964062BC1C50C89200A04F8A /* BackGround.swift in Sources */,
 				96F24B5A1C50A245002551CC /* AppDelegate.swift in Sources */,
 				964062B11C50B40300A04F8A /* Platform平台.swift in Sources */,
 			);
