@@ -44,9 +44,6 @@
                                                 <state key="normal" title="start">
                                                     <color key="titleColor" red="0.94154158659999998" green="0.26528185040000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
-                                                <variation key="heightClass=compact" misplaced="YES">
-                                                    <rect key="frame" x="60" y="36" width="63" height="43"/>
-                                                </variation>
                                                 <variation key="heightClass=regular-widthClass=regular">
                                                     <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="55"/>
                                                 </variation>
@@ -59,9 +56,6 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.94807346199999998" green="0.41645440189999999" blue="0.17773689640000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
-                                                <variation key="heightClass=compact" misplaced="YES">
-                                                    <rect key="frame" x="49" y="80" width="86" height="21"/>
-                                                </variation>
                                             </label>
                                         </subviews>
                                         <constraints>
