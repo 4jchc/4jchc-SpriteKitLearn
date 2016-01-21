@@ -66,17 +66,23 @@ class Panda: SKSpriteNode {
             rollFrames.append(rollTexture)
             
         }
-        
+        // 碰撞体
         self.physicsBody = SKPhysicsBody(rectangleOfSize:texture.size())
+        // 重力
         self.physicsBody!.dynamic = true
+        // 角度
         self.physicsBody!.allowsRotation = false
-        //摩擦力
+        // 摩擦力
         self.physicsBody!.restitution = 0
         // 类别掩码(CategoryBitmask)
         self.physicsBody!.categoryBitMask = BitMaskType.panda
+        // 测试掩码（ContactTestBitmask）
+        self.physicsBody!.contactTestBitMask = BitMaskType.scene | BitMaskType.platform
         // 碰撞掩码(CollisionBitmask),
-        self.physicsBody!.contactTestBitMask = BitMaskType.scene
+        self.physicsBody!.collisionBitMask = BitMaskType.platform
+
         run()
+
         
     }
     

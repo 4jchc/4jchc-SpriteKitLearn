@@ -45,9 +45,9 @@ class BackGround :SKNode {
         arrFar.append(farBg1)
         arrFar.append(farBg2)
         
-        //近处背景纹理
+        // 近处背景纹理
         let texture = SKTexture(imageNamed: "background_f0")
-        //近处背景由2张无缝衔接的图组成
+        // 近处背景由2张无缝衔接的图组成
         let bg0 = SKSpriteNode(texture: texture)
         bg0.anchorPoint = CGPointMake(0, 0)
         let bg1 = SKSpriteNode(texture: texture)

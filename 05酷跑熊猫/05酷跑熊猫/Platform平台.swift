@@ -21,5 +21,18 @@ class Platform: SKNode {
             self.addChild(platform)
             self.width += platform.size.width
         }
+
+        // 碰撞体
+        self.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.width, self.height), center: CGPointMake(self.width/2, 0))
+        // 重力
+        self.physicsBody!.dynamic = false
+        // 角度
+        self.physicsBody!.allowsRotation = false
+        // 摩擦力
+        self.physicsBody!.restitution = 0
+        // 类别掩码(CategoryBitmask)
+        self.physicsBody!.categoryBitMask = BitMaskType.platform
+        // 碰撞掩码(CollisionBitmask),
+        self.physicsBody!.contactTestBitMask = <#BitMaskType.scene#>
     }
 }

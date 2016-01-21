@@ -11,18 +11,18 @@ import SpriteKit
 
 class PlatformFactory: SKNode {
     
-    //添加纹理图
+    // 添加纹理图
     let textureLeft = SKTexture(imageNamed: "platform_l")
     let textureMid = SKTexture(imageNamed: "platform_m")
     let textureRight = SKTexture(imageNamed: "platform_r")
-    //平台数组
+    // 平台数组
     var platforms = [Platform]()
 
     var sceneWidth :CGFloat = 0
-    //子类实现代理
+    // 子类实现代理
     var delegate:ProtocolMainScene?
     
-    //创建平台
+    // 创建平台
     func createPlatform(midNum:UInt32,x:CGFloat,y:CGFloat){
         
         let platform = Platform()
