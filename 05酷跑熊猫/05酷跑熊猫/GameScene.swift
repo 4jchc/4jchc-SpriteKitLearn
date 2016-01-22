@@ -18,10 +18,12 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
     lazy var panda = Panda()
     lazy var platformFactory = PlatformFactory()
     lazy var bg = BackGround()
-    
+    lazy var appleFactory = AppleFactory()
     //移动速度
     var moveSpeed:CGFloat = 15
     var lastDis:CGFloat = 0.0
+    
+
 
     //碰撞检测函数
     func didBeginContact(contact: SKPhysicsContact) {
@@ -34,10 +36,20 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
         if (contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask) == (BitMaskType.platform | BitMaskType.panda){
             panda.run()
             
+            panda.jumpEnd = panda.position.y
+            // 判断熊猫跳的距离执行翻滚动作
+            if panda.jumpEnd-panda.jumpStart <= -30 {
+                panda.roll()
+            }
+            
         }
         
     }
-    
+    func didEndContact(contact: SKPhysicsContact){
+        //记录距离
+        panda.jumpStart = panda.position.y
+        
+    }
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -48,14 +60,13 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
         self.addChild(bg)
         bg.zPosition=20
         
-        
-        //设置物理碰撞代理
+        // 设置物理碰撞代理
         self.physicsWorld.contactDelegate = self
-        //重力
+        // 重力
         self.physicsWorld.gravity = CGVectorMake(0, -5)
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
         self.physicsBody!.categoryBitMask = BitMaskType.scene
-        //产生碰撞后重力不会飞来飞去
+        // 产生碰撞后重力不会飞来飞去
         self.physicsBody!.dynamic = false
         
         
@@ -70,6 +81,10 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
         platformFactory.sceneWidth = self.frame.size.width
         platformFactory.delegate = self
         platformFactory.createPlatform(3, x: 0, y: 200)
+        
+        // 添加苹果
+        //appleFactory.createAppleRandom()
+        self.addChild( appleFactory )
    
     }
     
@@ -82,7 +97,7 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
         }
         
     }
-    
+    // 每一桢 执行一次
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         lastDis -= moveSpeed
@@ -90,9 +105,11 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
             print("生成新平台")
             //platformFactory.createPlatform(1, x: 1500, y: 200)
             platformFactory.createPlatformRandom()
+            appleFactory.createAppleRandom()
         }
         // 移动平台
         platformFactory.move(self.moveSpeed)
+        appleFactory.move(self.moveSpeed)
         // 移动背景
         bg.move(moveSpeed/5)
     }

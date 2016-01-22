@@ -24,14 +24,21 @@ class Panda: SKSpriteNode {
     //纹理图集数组
     var runFrames = [SKTexture]()
     
+    //添加纹理图集
     let jumpAtlas = SKTextureAtlas(named: "jump.atlas")
     var jumpFrames = [SKTexture]()
     
+    //添加纹理图集
     let rollAtlas = SKTextureAtlas(named: "roll.atlas")
     var rollFrames = [SKTexture]()
     
     var status = Status.run
     
+    // 记录熊猫跳的距离
+    // 起跳 y坐标
+    var jumpStart:CGFloat = 0.0
+    // 落地 y坐标
+    var jumpEnd:CGFloat = 0.0
     
     init(){
         //单个纹理图
@@ -41,10 +48,12 @@ class Panda: SKSpriteNode {
         
         //MARK: - 跑---遍历纹理图集-得到单个纹理图-添加到纹理图集数组
         for var i = 1; i<=runAtlas.textureNames.count; i++ {
+            
+            // 1.得到单个纹理图
             let tempName = String(format: "panda_run_%.2d", i)
             let runTexture = runAtlas.textureNamed(tempName)
             
-            
+            // 2.添加到纹理图集数组
             runFrames.append(runTexture)
             
         }
@@ -81,9 +90,9 @@ class Panda: SKSpriteNode {
         self.physicsBody!.contactTestBitMask = BitMaskType.scene | BitMaskType.platform
         // 碰撞掩码(CollisionBitmask),
         self.physicsBody!.collisionBitMask = BitMaskType.platform
-
+        
         run()
-
+        
         
     }
     
@@ -104,11 +113,14 @@ class Panda: SKSpriteNode {
     
     func jump (){
         self.removeAllActions()
+        
         if status != Status.jump2 {
             self.runAction(SKAction.animateWithTextures(jumpFrames, timePerFrame: 0.05))
             self.physicsBody!.velocity = CGVectorMake(0, 450)
             if status == Status.jump {
                 status = Status.jump2
+                // 记录开始跳的点
+                self.jumpStart = self.position.y;
             }else{
                 status = Status.jump
             }
