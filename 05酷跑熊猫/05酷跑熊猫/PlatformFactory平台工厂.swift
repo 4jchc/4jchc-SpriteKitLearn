@@ -8,15 +8,18 @@
 
 import UIKit
 import SpriteKit
-
+//A定义代理.遵守协议.实现方法
+//B继承代理,调用方法,传值
 class PlatformFactory: SKNode {
+
+    
     
     // 添加纹理图
     let textureLeft = SKTexture(imageNamed: "platform_l")
     let textureMid = SKTexture(imageNamed: "platform_m")
     let textureRight = SKTexture(imageNamed: "platform_r")
     // 平台数组
-    var platforms = [Platform]()
+    var  platformsArray = [Platform]()
 
     var sceneWidth :CGFloat = 0
     // 子类实现代理
@@ -48,12 +51,13 @@ class PlatformFactory: SKNode {
         platform.onCreate(arrPlatform)
         self.addChild(platform)
         
-        platforms.append(platform)
+         platformsArray.append(platform)
         //MARK:  代理执行方法
         //通用公式：平台的长度+x坐标 - 主场景的宽度
         delegate?.onGetData(platform.width + x - sceneWidth)
         
     }
+    
     //随机
     func createPlatformRandom(){
         //随机平台的长度
@@ -70,15 +74,22 @@ class PlatformFactory: SKNode {
         
     }
     
-    //移动平台--遍历平台数组然后移动平台位置
+    //移动--遍历数组然后移动平台位置
     func move(speed:CGFloat){
-        for p in platforms{
+        // 遍历数组
+        for p in  platformsArray{
+            //x坐标的变化产生水平移动的动画
             p.position.x -= speed
         }
-        if platforms[0].position.x < -platforms[0].width {
-            platforms[0].removeFromParent()
-            platforms.removeAtIndex(0)
+        // 移除平台
+        if platformsArray.count > 0{
+            
+            if  platformsArray[0].position.x < -platformsArray[0].width {
+                platformsArray[0].removeFromParent()
+                platformsArray.removeAtIndex(0)
+            }
         }
+
     }
 
 }

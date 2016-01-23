@@ -22,6 +22,7 @@
 		967040D41C5335BD0014592F /* hit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 967040CD1C5335BD0014592F /* hit.mp3 */; };
 		967040D51C5335BD0014592F /* jump_from_platform.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 967040CE1C5335BD0014592F /* jump_from_platform.mp3 */; };
 		967040D61C5335BD0014592F /* lose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 967040CF1C5335BD0014592F /* lose.mp3 */; };
+		967040D81C534E8C0014592F /* GameOverScen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967040D71C534E8C0014592F /* GameOverScen.swift */; };
 		96BC2E3C1C51F30B009B99AB /* Apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC2E3B1C51F30B009B99AB /* Apple.swift */; };
 		96BC2E3E1C521E2A009B99AB /* AppleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC2E3D1C521E2A009B99AB /* AppleFactory.swift */; };
 		96F24B5A1C50A245002551CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F24B591C50A245002551CC /* AppDelegate.swift */; };
@@ -72,6 +73,7 @@
 		967040CD1C5335BD0014592F /* hit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit.mp3; sourceTree = "<group>"; };
 		967040CE1C5335BD0014592F /* jump_from_platform.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jump_from_platform.mp3; sourceTree = "<group>"; };
 		967040CF1C5335BD0014592F /* lose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lose.mp3; sourceTree = "<group>"; };
+		967040D71C534E8C0014592F /* GameOverScen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScen.swift; sourceTree = "<group>"; };
 		96BC2E3B1C51F30B009B99AB /* Apple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apple.swift; sourceTree = "<group>"; };
 		96BC2E3D1C521E2A009B99AB /* AppleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleFactory.swift; sourceTree = "<group>"; };
 		96F24B561C50A245002551CC /* 05酷跑熊猫.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "05酷跑熊猫.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +161,7 @@
 				96F24B591C50A245002551CC /* AppDelegate.swift */,
 				967040C71C532FC70014592F /* LoadSound.swift */,
 				964062AE1C50A7C400A04F8A /* Panda.swift */,
+				967040D71C534E8C0014592F /* GameOverScen.swift */,
 				964062B01C50B40300A04F8A /* Platform平台.swift */,
 				964062B21C50B47500A04F8A /* PlatformFactory平台工厂.swift */,
 				964062BB1C50C89200A04F8A /* BackGround.swift */,
@@ -367,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				967040D81C534E8C0014592F /* GameOverScen.swift in Sources */,
 				96BC2E3C1C51F30B009B99AB /* Apple.swift in Sources */,
 				96F24B5E1C50A245002551CC /* GameScene.swift in Sources */,
 				964062BE1C50CC7100A04F8A /* BitMaskType.swift in Sources */,

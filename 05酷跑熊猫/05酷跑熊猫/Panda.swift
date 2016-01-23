@@ -159,13 +159,14 @@ class Panda: SKSpriteNode {
         //先将特效取消隐藏
         jumpEffect.hidden = false
         //利用action播放特效
-        let ectAct = SKAction.animateWithTextures( jumpEffectFrames, timePerFrame: 0.05)
+        let action = SKAction.animateWithTextures( jumpEffectFrames, timePerFrame: 0.05)
         //执行闭包，再次隐藏特效
-        let removeAct = SKAction.runBlock({() in
+        let removeAction = SKAction.runBlock({() in
             self.jumpEffect.hidden = true
         })
-        //组成序列Action进行执行(播放-隐藏)
-        jumpEffect.runAction(SKAction.sequence([ectAct,removeAct]))
+        //组成序列Action进行执行(先显示，后隐藏)
+        jumpEffect.runAction(SKAction.sequence([action,removeAction]))
+        
     }
     func roll(){
         self.removeAllActions()

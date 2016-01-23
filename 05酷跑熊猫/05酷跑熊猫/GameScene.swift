@@ -23,6 +23,7 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
     lazy var loadSound = LoadSound()
     //移动速度
     var moveSpeed:CGFloat = 15
+    //判断最后一个平台还有多远完全进入游戏场景
     var lastDis:CGFloat = 0.0
     
 
@@ -33,15 +34,32 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
         let maskBody = firstBody | secondBody
         
         
-//        if (contact.bodyA.categoryBitMask|contact.bodyB.categoryBitMask) == (BitMaskType.scene | BitMaskType.panda) {
-//            
-//            print("游戏结束")
-//        }
-        
         // 如果熊猫和场景边缘碰撞
         if maskBody == BitMaskType.scene | BitMaskType.panda{
             
-            print("游戏结束")
+//            self.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.runBlock({
+//            
+//
+//            })]))
+            // 添加转场特效
+            let transition = SKTransition.doorsCloseVerticalWithDuration(0.5)
+            let scene = GameOverScen.init(size: self.size, won: false)
+            self.view?.presentScene(scene, transition: transition)
+            // 游戏结束
+            moveSpeed = 0
+            
+//            // 移除-动画-视图-清空数组
+//            platformFactory.removeAllActions()
+//            platformFactory.removeAllChildren()
+//            platformFactory.platformsArray.removeAll(keepCapacity: true)//保存容量
+//            
+//            // 移除-动画-视图-清空数组
+//            appleFactory.removeAllActions()
+//            appleFactory.removeAllChildren()
+//            appleFactory.appleArray.removeAll(keepCapacity: true)//保存容量
+            
+            loadSound.stopBackgroundMusic()
+            
         }
         
         
@@ -59,10 +77,10 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
         // 熊猫和苹果碰撞
         if maskBody == BitMaskType.apple | BitMaskType.panda {
             
-            if contact.bodyA.categoryBitMask == BitMaskType.apple{
+            if firstBody == BitMaskType.apple{
                 apple = contact.bodyA.node as! Apple
             }
-            if contact.bodyB.categoryBitMask == BitMaskType.apple {
+            if secondBody == BitMaskType.apple {
                 
                 apple = contact.bodyB.node as! Apple
             }
@@ -72,6 +90,7 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
         
         
     }
+
     func didEndContact(contact: SKPhysicsContact){
         //记录距离
         panda.jumpStart = panda.position.y

@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 class AppleFactory: SKNode {
     
-     var arrApple = [Apple]()
+     var appleArray = [Apple]()
     
     
     // 随机Apple
@@ -39,18 +39,18 @@ class AppleFactory: SKNode {
         apple.position  = CGPointMake(x , y)
         
         self.addChild(apple)
-        arrApple.append(apple)
+        appleArray.append(apple)
 
     }
     
     func move(speed:CGFloat){
-        for apple in arrApple {
+        for apple in appleArray {
             apple.position.x -= speed
         }
-        if arrApple.count > 0 && arrApple[0].position.x < -20{
+        if appleArray.count > 0 && appleArray[0].position.x < -20{
             
-            arrApple[0].removeFromParent()
-            arrApple.removeAtIndex(0)
+            appleArray[0].removeFromParent()
+            appleArray.removeAtIndex(0)
             
         }
     }
