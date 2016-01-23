@@ -14,8 +14,20 @@ class Apple: SKNode {
         super.init()
         let appleTexture = SKTexture(imageNamed: "apple")
         let apple = SKSpriteNode(texture: appleTexture)
+        apple.zPosition = 40
         apple.anchorPoint = CGPoint(x: 0,y: 0)
         self.addChild(apple)
+        // 碰撞体 rectangle:长方形(矩形,直角)
+        self.physicsBody = SKPhysicsBody(circleOfRadius: apple.frame.width/2, center: CGPointMake(0, 0))
+        // 重力
+        self.physicsBody!.dynamic = false
+        // 角度
+        self.physicsBody!.allowsRotation = false
+        // 摩擦力
+        self.physicsBody!.restitution = 0
+        // 类别掩码(CategoryBitmask)
+        self.physicsBody!.categoryBitMask = BitMaskType.apple
+    
     }
 
     required init?(coder aDecoder: NSCoder) {

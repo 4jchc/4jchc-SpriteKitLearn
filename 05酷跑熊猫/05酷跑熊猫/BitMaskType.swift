@@ -7,8 +7,10 @@
 //
 
 import UIKit
+
 // 位掩码(BitMask)
 class BitMaskType {
+    
     class var panda:UInt32{
         return 1<<0
     }

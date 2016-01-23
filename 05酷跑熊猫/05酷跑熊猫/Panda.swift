@@ -86,11 +86,11 @@ class Panda: SKSpriteNode {
         self.physicsBody!.restitution = 0
         // 类别掩码(CategoryBitmask)
         self.physicsBody!.categoryBitMask = BitMaskType.panda
-        // 测试掩码（ContactTestBitmask）
-        self.physicsBody!.contactTestBitMask = BitMaskType.scene | BitMaskType.platform
+        // 接触掩码（ContactTestBitmask）
+        self.physicsBody!.contactTestBitMask = BitMaskType.scene | BitMaskType.platform | BitMaskType.apple
         // 碰撞掩码(CollisionBitmask),
         self.physicsBody!.collisionBitMask = BitMaskType.platform
-        
+
         run()
         
         

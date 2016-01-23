@@ -14,6 +14,7 @@ protocol ProtocolMainScene{
 
 class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
     
+    var apple:Apple!
     //懒加载
     lazy var panda = Panda()
     lazy var platformFactory = PlatformFactory()
@@ -24,16 +25,27 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
     var lastDis:CGFloat = 0.0
     
 
-
     //碰撞检测函数
     func didBeginContact(contact: SKPhysicsContact) {
-        //如果熊猫和场景边缘碰撞
-        if (contact.bodyA.categoryBitMask|contact.bodyB.categoryBitMask) == (BitMaskType.scene | BitMaskType.panda) {
+        let firstBody = contact.bodyA.categoryBitMask
+        let secondBody = contact.bodyB.categoryBitMask
+        let maskBody = firstBody | secondBody
+        
+        
+//        if (contact.bodyA.categoryBitMask|contact.bodyB.categoryBitMask) == (BitMaskType.scene | BitMaskType.panda) {
+//            
+//            print("游戏结束")
+//        }
+        
+        // 如果熊猫和场景边缘碰撞
+        if maskBody == BitMaskType.scene | BitMaskType.panda{
             
             print("游戏结束")
         }
+        
+        
         // 熊猫和台子碰撞
-        if (contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask) == (BitMaskType.platform | BitMaskType.panda){
+        if maskBody == (BitMaskType.platform | BitMaskType.panda){
             panda.run()
             
             panda.jumpEnd = panda.position.y
@@ -43,6 +55,20 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
             }
             
         }
+        // 熊猫和苹果碰撞
+        if maskBody == BitMaskType.apple | BitMaskType.panda {
+            
+            
+            if contact.bodyA.categoryBitMask == BitMaskType.apple{
+                apple = contact.bodyA.node as! Apple
+            }
+            if contact.bodyB.categoryBitMask == BitMaskType.apple {
+                
+                apple = contact.bodyB.node as! Apple
+            }
+            apple.removeFromParent()
+        }
+        
         
     }
     func didEndContact(contact: SKPhysicsContact){

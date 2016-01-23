@@ -13,19 +13,18 @@ class AppleFactory: SKNode {
      var arrApple = [Apple]()
     
     
-    //随机
+    // 随机Apple
     func createAppleRandom(){
         //随机度
-        let midNum:UInt32 = arc4random()%4 + 1
+        let midNum:UInt32 = arc4random()%1 + 1
 
-        for var i:UInt32 = 0; i <= midNum; i++ {
+        for var i:UInt32 = 0; i < midNum; i++ {
             
             createApple()
         }
-
-     
     }
 
+    
     func createApple(){
         
         let apple = Apple()
@@ -36,7 +35,7 @@ class AppleFactory: SKNode {
         //x坐标
         let x:CGFloat = UIScreen.mainScreen().bounds.size.width + CGFloat( midNum*50 ) + gap + 100
         //y坐标
-        let y:CGFloat = CGFloat(arc4random()%200 + 200)
+        let y:CGFloat = CGFloat(arc4random()%400 + 200)
         apple.position  = CGPointMake(x , y)
         
         self.addChild(apple)
@@ -44,6 +43,7 @@ class AppleFactory: SKNode {
 
         
     }
+    
     func move(speed:CGFloat){
         for apple in arrApple {
             apple.position.x -= speed
@@ -54,6 +54,8 @@ class AppleFactory: SKNode {
             arrApple.removeAtIndex(0)
             
         }
-        
     }
+    
+    
+    
 }
