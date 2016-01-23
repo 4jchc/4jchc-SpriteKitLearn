@@ -41,7 +41,6 @@ class AppleFactory: SKNode {
         self.addChild(apple)
         arrApple.append(apple)
 
-        
     }
     
     func move(speed:CGFloat){

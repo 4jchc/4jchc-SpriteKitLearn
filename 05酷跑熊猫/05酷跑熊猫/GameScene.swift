@@ -20,6 +20,7 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
     lazy var platformFactory = PlatformFactory()
     lazy var bg = BackGround()
     lazy var appleFactory = AppleFactory()
+    lazy var loadSound = LoadSound()
     //移动速度
     var moveSpeed:CGFloat = 15
     var lastDis:CGFloat = 0.0
@@ -58,7 +59,6 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
         // 熊猫和苹果碰撞
         if maskBody == BitMaskType.apple | BitMaskType.panda {
             
-            
             if contact.bodyA.categoryBitMask == BitMaskType.apple{
                 apple = contact.bodyA.node as! Apple
             }
@@ -66,6 +66,7 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
                 
                 apple = contact.bodyB.node as! Apple
             }
+            loadSound.playEat()
             apple.removeFromParent()
         }
         
@@ -86,6 +87,10 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
         self.addChild(bg)
         bg.zPosition=20
         
+        //MARK: 一定要加载音乐类SKNode
+        self.addChild( loadSound )
+        loadSound.playBackgroundMusic()
+            
         // 设置物理碰撞代理
         self.physicsWorld.contactDelegate = self
         // 重力
