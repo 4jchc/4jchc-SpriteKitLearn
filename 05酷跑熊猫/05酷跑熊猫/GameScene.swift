@@ -90,7 +90,7 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
         //MARK: 一定要加载音乐类SKNode
         self.addChild( loadSound )
         loadSound.playBackgroundMusic()
-            
+        
         // 设置物理碰撞代理
         self.physicsWorld.contactDelegate = self
         // 重力

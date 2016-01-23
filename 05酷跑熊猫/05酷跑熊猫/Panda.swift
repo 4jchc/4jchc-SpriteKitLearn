@@ -32,6 +32,14 @@ class Panda: SKSpriteNode {
     let rollAtlas = SKTextureAtlas(named: "roll.atlas")
     var rollFrames = [SKTexture]()
     
+    //起跳特效纹理集
+    let jumpEffectAtlas = SKTextureAtlas(named: "jump_effect.atlas")
+    //存储起跳特效纹理的数组
+    var jumpEffectFrames = [SKTexture]()
+    //起跳特效
+    var jumpEffect = SKSpriteNode()
+    
+    
     var status = Status.run
     
     // 记录熊猫跳的距离
@@ -76,6 +84,21 @@ class Panda: SKSpriteNode {
             rollFrames.append(rollTexture)
             
         }
+        //起跳特效
+        for var i = 1 ; i <= jumpEffectAtlas.textureNames.count ; i++ {
+            let tempName = String(format: "jump_effect_%.2d", i)
+            let effectexture = jumpEffectAtlas.textureNamed(tempName)
+
+                jumpEffectFrames.append(effectexture)
+        
+        }
+        //设置起跳特效
+        jumpEffect = SKSpriteNode(texture: jumpEffectFrames[0])
+        jumpEffect.position = CGPointMake(-80, -30)
+        jumpEffect.hidden = true
+        self.addChild(jumpEffect)
+
+        
         // 碰撞体
         self.physicsBody = SKPhysicsBody(rectangleOfSize:texture.size())
         // 重力
@@ -122,11 +145,28 @@ class Panda: SKSpriteNode {
                 // 记录开始跳的点
                 self.jumpStart = self.position.y;
             }else{
+                // 显示特效
+                showJumpEffect()
                 status = Status.jump
             }
         }
     }
     
+    
+    
+    //起跳特效
+    func showJumpEffect(){
+        //先将特效取消隐藏
+        jumpEffect.hidden = false
+        //利用action播放特效
+        let ectAct = SKAction.animateWithTextures( jumpEffectFrames, timePerFrame: 0.05)
+        //执行闭包，再次隐藏特效
+        let removeAct = SKAction.runBlock({() in
+            self.jumpEffect.hidden = true
+        })
+        //组成序列Action进行执行(播放-隐藏)
+        jumpEffect.runAction(SKAction.sequence([ectAct,removeAct]))
+    }
     func roll(){
         self.removeAllActions()
         status = .roll
