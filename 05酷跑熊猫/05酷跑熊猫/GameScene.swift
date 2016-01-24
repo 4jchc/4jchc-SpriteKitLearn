@@ -31,9 +31,13 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
     var moveSpeed:CGFloat = 15
     //判断最后一个平台还有多远完全进入游戏场景
     var lastDis:CGFloat = 0.0
-
     //是否game over
     var isLose = false
+    
+    // 添加得分标签
+    let scoreLab = SKLabelNode(fontNamed:"ZrnicRg-Regular")
+    let appLab = SKLabelNode(fontNamed:"ZrnicRg-Regular")
+    var appleNum = 0
     
     //碰撞检测函数
     func didBeginContact(contact: SKPhysicsContact) {
@@ -139,6 +143,7 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
                 apple = contact.bodyB.node as! Apple
             }
             loadSound.playEat()
+            appleNum++
             apple.removeFromParent()
         }
         
@@ -153,12 +158,31 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        let skyColor = SKColor(red:113.0/255.0, green:197.0/255.0, blue:207.0/255.0, alpha:1.0)
-        self.backgroundColor = skyColor
+   
+        self.backgroundColor = SKColor.wishesLilac()
 
+        scoreLab.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+        scoreLab.position = CGPointMake(self.frame.size.width/10*8, self.size.height/6*5-20)
+        scoreLab.text = "run: 0 km"
+        scoreLab.zPosition = 6
+        scoreLab.fontSize = 40
+        scoreLab.fontColor = SKColor.redColor()
+        self.addChild(scoreLab)
+        
+        appLab.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+        appLab.position = CGPointMake(self.frame.size.width/10*5+40, self.frame.size.height/6*5-20)
+        appLab.text = "eat: \(appleNum) apple"
+        appLab.fontSize = 40
+        appLab.fontColor = SKColor.redColor()
+        appLab.zPosition = 6
+        self.addChild(appLab)
+
+        
+        
+        
         // 添加背景
         self.addChild(bg)
-        bg.zPosition=20
+        bg.zPosition=2
         
         //MARK: 一定要加载音乐类SKNode
         self.addChild( loadSound )
@@ -176,12 +200,12 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
         
         // 添加熊猫
         panda.position = CGPointMake(200, 400)
-        panda.zPosition=40
+        panda.zPosition=4
         self.addChild(panda)
         
         // 添加平台
         self.addChild(platformFactory)
-        platformFactory.zPosition=30
+        platformFactory.zPosition=3
         platformFactory.sceneWidth = self.frame.size.width
         platformFactory.delegate = self
         platformFactory.createPlatform(3, x: 0, y: 200)
@@ -231,6 +255,9 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
                 platformFactory.createPlatformRandom()
                 appleFactory.createAppleRandom()
             }
+            scoreLab.text = "run: \(Int(distance/1000*10)/10) km"
+            appLab.text = "eat: \(appleNum) apple"
+            
             // 移动平台
             platformFactory.move(self.moveSpeed)
             // 移动苹果

@@ -19,8 +19,7 @@ class GameOverScen: SKScene {
         super.init(size: size)
         
         // 添加背景
-        let skyColor = SKColor(red:113.0/255.0, green:197.0/255.0, blue:207.0/255.0, alpha:1.0)
-        self.backgroundColor = skyColor
+        self.backgroundColor = SKColor.wishesLilac()
         
         // 设置提示信息
         if won{
@@ -32,6 +31,7 @@ class GameOverScen: SKScene {
         lable.fontSize = 100
         lable.fontColor = SKColor.redColor()
         lable.position = CGPointMake(self.size.width/2, self.size.height/2)
+        self.addChild(lable)
         
         beginGame.text = "重新开始游戏"
         beginGame.fontSize = 50
@@ -39,7 +39,7 @@ class GameOverScen: SKScene {
         beginGame.position = CGPointMake(self.size.width/2, self.size.height/2-100)
         beginGame.name = "beginGame"
         self.addChild(beginGame)
-        self.addChild(lable)
+
         
     }
     
@@ -78,7 +78,7 @@ class GameOverScen: SKScene {
     override func update(currentTime: NSTimeInterval) {
         
 
-        beginGame.fontColor = SKColor.randomColorF()
+        beginGame.fontColor = SKColor.randomColor
 
         
 

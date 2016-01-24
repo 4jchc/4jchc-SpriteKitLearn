@@ -17,7 +17,7 @@ class GameScene: SKScene {
     // 判断游戏结束
     var gameOverNum = 3;
     
-
+    
     
     // 得分标签
     var _scoreLabel:SKLabelNode!
@@ -47,7 +47,7 @@ class GameScene: SKScene {
     
     // 鼹鼠数组
     var _moles:NSArray!
-
+    
     /// 1.定义闭包
     typealias AssetLoadCompletionHandler = () -> Void
     
@@ -134,10 +134,10 @@ class GameScene: SKScene {
         _loseLabel.text = "Lose: 0";
         _loseLabel.fontSize = kFontSize;
         _loseLabel.fontColor = SKColor.redColor()
-                let loseX:CGFloat   = (IS_IPAD ? (260) : (90));
-                let loseY:CGFloat   = (IS_IPAD ? (20) : (20));
-                _loseLabel.position = CGPointMake(loseX, loseY);
-       // _loseLabel.position = CGPointMake(99, 20);
+        let loseX:CGFloat   = (IS_IPAD ? (260) : (90));
+        let loseY:CGFloat   = (IS_IPAD ? (20) : (20));
+        _loseLabel.position = CGPointMake(loseX, loseY);
+        // _loseLabel.position = CGPointMake(99, 20);
         _loseLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left;
         _loseLabel.zPosition = 4;
         
@@ -211,7 +211,7 @@ class GameScene: SKScene {
         _startTime = NSDate()
         //游戏标识符
         _isGameOver = false
-
+        
         
     }
     
@@ -231,7 +231,7 @@ class GameScene: SKScene {
             
             (_moles[i] as! Mole).stopAction()
         }
-
+        
         // 通知在不需要的时候，要及时销毁
         //NSNotificationCenter.defaultCenter().removeObserver(self, name: "tongzhi", object: nil)
     }
@@ -280,7 +280,7 @@ class GameScene: SKScene {
                 _loseLabel.text = NSString(format: "Lose: %d", _lose) as String
                 
                 self.isGameOver()
-
+                
             }
         }
     }
@@ -290,10 +290,10 @@ class GameScene: SKScene {
         steps++;
         //当游戏结束时停止更新时钟
         if (_isGameOver == true) {
-
+            
             return
         }
-
+        
         // 更新时钟标签
         let dt:Int = Int(NSDate().timeIntervalSinceDate(_startTime))
         _timerLabel.text = NSString(format: "%02d:%02d:%02d", dt / 3600, (dt % 3600) / 60, dt % 60) as String
@@ -385,7 +385,7 @@ class GameScene: SKScene {
         }
     }
     
-
+    
     deinit{
         // 通知在不需要的时候，要及时销毁
         NSNotificationCenter.defaultCenter().removeObserver(self)
