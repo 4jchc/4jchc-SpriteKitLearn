@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		964062BA1C50C49C00A04F8A /* BackGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964062B91C50C49C00A04F8A /* BackGround.swift */; };
 		968650531C4CB44000A8D995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968650521C4CB44000A8D995 /* AppDelegate.swift */; };
 		968650551C4CB44000A8D995 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 968650541C4CB44000A8D995 /* GameScene.sks */; };
 		968650571C4CB44000A8D995 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968650561C4CB44000A8D995 /* GameScene.swift */; };
@@ -53,7 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		964062B91C50C49C00A04F8A /* BackGround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackGround.swift; sourceTree = "<group>"; };
 		9686504F1C4CB44000A8D995 /* 04打鼹鼠.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "04打鼹鼠.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		968650521C4CB44000A8D995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		968650541C4CB44000A8D995 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 				968650521C4CB44000A8D995 /* AppDelegate.swift */,
 				968650541C4CB44000A8D995 /* GameScene.sks */,
 				968650561C4CB44000A8D995 /* GameScene.swift */,
-				964062B91C50C49C00A04F8A /* BackGround.swift */,
 				96A2F0951C4E343900B819B9 /* GameScene_iPad.swift */,
 				96A2F0931C4DE3B600B819B9 /* Mole.swift */,
 				968650581C4CB44000A8D995 /* GameViewController.swift */,
@@ -380,7 +377,6 @@
 				968650AD1C4CF16E00A8D995 /* SKTextureAtlas+Extension.swift in Sources */,
 				968650571C4CB44000A8D995 /* GameScene.swift in Sources */,
 				968650591C4CB44000A8D995 /* GameViewController.swift in Sources */,
-				964062BA1C50C49C00A04F8A /* BackGround.swift in Sources */,
 				968650AB1C4CF14E00A8D995 /* 常量.swift in Sources */,
 				96A2F0941C4DE3B600B819B9 /* Mole.swift in Sources */,
 				96A2F0961C4E343900B819B9 /* GameScene_iPad.swift in Sources */,

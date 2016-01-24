@@ -10,6 +10,8 @@ import SpriteKit
 
 protocol ProtocolMainScene{
     func onGetData(dist:CGFloat)
+    //重新开始游戏
+    func start()
 }
 
 class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
@@ -50,14 +52,15 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
                 let scene = GameOverScen.init(size: self.size, won: false)
                 self.view?.presentScene(scene, transition: transition)
             })]))
-
+            
+            
             // 游戏结束
             moveSpeed = 0
             loadSound.playDead()
             //会在updata时判断是否结束游戏
             isLose = true
             loadSound.stopBackgroundMusic()
-            
+           // self.removeFromParent()
             
    
             
@@ -192,17 +195,12 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         
-        if isLose {
-            reSet()
-        }else{
-            panda.jump()
-        }
-        
-//        if panda.status == Status.run {
+//        if isLose {
+//            reSet()
+//        }else{
 //            panda.jump()
-//        }else if panda.status == Status.jump {
-//            panda.roll()
 //        }
+        panda.jump()
         
     }
     // 每一桢 执行一次
@@ -280,9 +278,12 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
             let downUpAct = SKAction.sequence([downAct,upAct])
             node.runAction(downUpAct)
     }
-    
+    //MARK: - 代理方法
     func onGetData(dist:CGFloat){
         self.lastDis = dist
         
+    }
+    func start() {
+        self.reSet()
     }
 }
