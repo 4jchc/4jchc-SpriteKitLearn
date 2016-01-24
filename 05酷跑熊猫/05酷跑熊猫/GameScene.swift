@@ -25,7 +25,7 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
     var moveSpeed:CGFloat = 15
     //判断最后一个平台还有多远完全进入游戏场景
     var lastDis:CGFloat = 0.0
-    
+
 
     //碰撞检测函数
     func didBeginContact(contact: SKPhysicsContact) {
@@ -37,26 +37,20 @@ class GameScene: SKScene,ProtocolMainScene,SKPhysicsContactDelegate {
         // 如果熊猫和场景边缘碰撞
         if maskBody == BitMaskType.scene | BitMaskType.panda{
             
-//            self.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.runBlock({
-//            
-//
-//            })]))
-            // 添加转场特效
-            let transition = SKTransition.doorsCloseVerticalWithDuration(0.5)
-            let scene = GameOverScen.init(size: self.size, won: false)
-            self.view?.presentScene(scene, transition: transition)
+            self.runAction(SKAction.sequence([SKAction.waitForDuration(1),SKAction.runBlock({
+            
+                // 添加转场特效
+                let transition = SKTransition.doorsCloseVerticalWithDuration(0.5)
+                let scene = GameOverScen.init(size: self.size, won: false)
+                self.view?.presentScene(scene, transition: transition)
+            })]))
+
             // 游戏结束
             moveSpeed = 0
             
-//            // 移除-动画-视图-清空数组
-//            platformFactory.removeAllActions()
-//            platformFactory.removeAllChildren()
-//            platformFactory.platformsArray.removeAll(keepCapacity: true)//保存容量
-//            
-//            // 移除-动画-视图-清空数组
-//            appleFactory.removeAllActions()
-//            appleFactory.removeAllChildren()
-//            appleFactory.appleArray.removeAll(keepCapacity: true)//保存容量
+            platformFactory.reSet()
+
+            appleFactory.reSet()
             
             loadSound.stopBackgroundMusic()
             

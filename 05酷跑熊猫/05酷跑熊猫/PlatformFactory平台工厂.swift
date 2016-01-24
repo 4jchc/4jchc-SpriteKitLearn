@@ -15,15 +15,24 @@ class PlatformFactory: SKNode {
     
     
     // 添加纹理图
+    //定义平台左边纹理
     let textureLeft = SKTexture(imageNamed: "platform_l")
+    //定义平台中间纹理
     let textureMid = SKTexture(imageNamed: "platform_m")
+    //定义平台右边纹理
     let textureRight = SKTexture(imageNamed: "platform_r")
-    // 平台数组
-    var  platformsArray = [Platform]()
 
-    var sceneWidth :CGFloat = 0
-    // 子类实现代理
+    //定义一个数组来储存组装后的平台
+    var platformsArray = [Platform]()
+    
+    //游戏场景的宽度
+    var sceneWidth:CGFloat = 0
+    //ProtocolMainScene代理
     var delegate:ProtocolMainScene?
+    
+    
+    
+    
     
     // 创建平台
     func createPlatform(midNum:UInt32,x:CGFloat,y:CGFloat){
@@ -48,6 +57,7 @@ class PlatformFactory: SKNode {
             arrPlatform.append(platform_mid)
         }
         arrPlatform.append(platform_right)
+        
         platform.onCreate(arrPlatform)
         self.addChild(platform)
         
@@ -67,7 +77,7 @@ class PlatformFactory: SKNode {
         //x坐标
         let x:CGFloat = self.sceneWidth + CGFloat( midNum*50 ) + gap + 100
         //y坐标
-        let y:CGFloat = CGFloat(arc4random()%200 + 200)
+        let y:CGFloat = CGFloat(arc4random()%200 + 200 )
         
         createPlatform(midNum, x: x, y: y)
         
@@ -90,6 +100,15 @@ class PlatformFactory: SKNode {
             }
         }
 
+    }
+    /// 重置方法
+    func reSet(){
+        // 移除-动画-视图-清空数组
+        self.removeAllActions()
+        // 清除所有子对象
+        self.removeAllChildren()
+        // 清空平台数组
+        platformsArray.removeAll(keepCapacity: false)//保存容量
     }
 
 }

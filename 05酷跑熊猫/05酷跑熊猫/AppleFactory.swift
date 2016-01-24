@@ -56,5 +56,14 @@ class AppleFactory: SKNode {
     }
     
     
+    //重置方法
+    func reSet(){
+        // 移除-动画-视图-清空数组
+        self.removeAllActions()
+        // 清除所有子对象
+        self.removeAllChildren()
+        // 清空平台数组
+        appleArray.removeAll(keepCapacity: false)//保存容量
+    }
     
 }
