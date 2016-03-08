@@ -10,8 +10,6 @@
 		964062AF1C50A7C400A04F8A /* Panda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964062AE1C50A7C400A04F8A /* Panda.swift */; };
 		964062B11C50B40300A04F8A /* Platform平台.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964062B01C50B40300A04F8A /* Platform平台.swift */; };
 		964062B31C50B47500A04F8A /* PlatformFactory平台工厂.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964062B21C50B47500A04F8A /* PlatformFactory平台工厂.swift */; };
-		964062B71C50C3B200A04F8A /* background_f0.png in Resources */ = {isa = PBXBuildFile; fileRef = 964062B41C50C3B200A04F8A /* background_f0.png */; };
-		964062B81C50C3B200A04F8A /* background_f1.png in Resources */ = {isa = PBXBuildFile; fileRef = 964062B51C50C3B200A04F8A /* background_f1.png */; };
 		964062BC1C50C89200A04F8A /* BackGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964062BB1C50C89200A04F8A /* BackGround.swift */; };
 		964062BE1C50CC7100A04F8A /* BitMaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964062BD1C50CC7100A04F8A /* BitMaskType.swift */; };
 		967040C81C532FC70014592F /* LoadSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967040C71C532FC70014592F /* LoadSound.swift */; };
@@ -26,6 +24,8 @@
 		967987401C54C7FE00EA82DD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9679873F1C54C7FE00EA82DD /* UIColor+Extension.swift */; };
 		96BC2E3C1C51F30B009B99AB /* Apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC2E3B1C51F30B009B99AB /* Apple.swift */; };
 		96BC2E3E1C521E2A009B99AB /* AppleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BC2E3D1C521E2A009B99AB /* AppleFactory.swift */; };
+		96E0DCDD1C8E7B090068AA03 /* background_f0.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0DCDB1C8E7B090068AA03 /* background_f0.png */; };
+		96E0DCDE1C8E7B090068AA03 /* background_f1.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E0DCDC1C8E7B090068AA03 /* background_f1.png */; };
 		96F24B5A1C50A245002551CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F24B591C50A245002551CC /* AppDelegate.swift */; };
 		96F24B5C1C50A245002551CC /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 96F24B5B1C50A245002551CC /* GameScene.sks */; };
 		96F24B5E1C50A245002551CC /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F24B5D1C50A245002551CC /* GameScene.swift */; };
@@ -62,8 +62,6 @@
 		964062AE1C50A7C400A04F8A /* Panda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panda.swift; sourceTree = "<group>"; };
 		964062B01C50B40300A04F8A /* Platform平台.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Platform平台.swift"; sourceTree = "<group>"; };
 		964062B21C50B47500A04F8A /* PlatformFactory平台工厂.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlatformFactory平台工厂.swift"; sourceTree = "<group>"; };
-		964062B41C50C3B200A04F8A /* background_f0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_f0.png; sourceTree = "<group>"; };
-		964062B51C50C3B200A04F8A /* background_f1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_f1.png; sourceTree = "<group>"; };
 		964062BB1C50C89200A04F8A /* BackGround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackGround.swift; sourceTree = "<group>"; };
 		964062BD1C50CC7100A04F8A /* BitMaskType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitMaskType.swift; sourceTree = "<group>"; };
 		967040C71C532FC70014592F /* LoadSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSound.swift; sourceTree = "<group>"; };
@@ -78,6 +76,8 @@
 		9679873F1C54C7FE00EA82DD /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		96BC2E3B1C51F30B009B99AB /* Apple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apple.swift; sourceTree = "<group>"; };
 		96BC2E3D1C521E2A009B99AB /* AppleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleFactory.swift; sourceTree = "<group>"; };
+		96E0DCDB1C8E7B090068AA03 /* background_f0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_f0.png; sourceTree = "<group>"; };
+		96E0DCDC1C8E7B090068AA03 /* background_f1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_f1.png; sourceTree = "<group>"; };
 		96F24B561C50A245002551CC /* 05酷跑熊猫.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "05酷跑熊猫.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F24B591C50A245002551CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96F24B5B1C50A245002551CC /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -124,15 +124,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		964062B61C50C3B200A04F8A /* background */ = {
+		96E0DCDA1C8E7B090068AA03 /* background */ = {
 			isa = PBXGroup;
 			children = (
-				964062B41C50C3B200A04F8A /* background_f0.png */,
-				964062B51C50C3B200A04F8A /* background_f1.png */,
+				96E0DCDB1C8E7B090068AA03 /* background_f0.png */,
+				96E0DCDC1C8E7B090068AA03 /* background_f1.png */,
 			);
-			name = background;
-			path = "/Volumes/t/Users/【黑马15】/AA游戏开发/Swift游戏实战-熊猫跑酷/12 视差滚动背景-实现/panda/panda/background";
-			sourceTree = "<absolute>";
+			path = background;
+			sourceTree = "<group>";
 		};
 		96F24B4D1C50A245002551CC = {
 			isa = PBXGroup;
@@ -157,7 +156,7 @@
 		96F24B581C50A245002551CC /* 05酷跑熊猫 */ = {
 			isa = PBXGroup;
 			children = (
-				964062B61C50C3B200A04F8A /* background */,
+				96E0DCDA1C8E7B090068AA03 /* background */,
 				96F24B9D1C50A3BB002551CC /* atlas */,
 				96F24B8B1C50A394002551CC /* sound */,
 				96F24B591C50A245002551CC /* AppDelegate.swift */,
@@ -337,14 +336,14 @@
 				96F24B651C50A245002551CC /* Assets.xcassets in Resources */,
 				96F24BA31C50A3BB002551CC /* jump_effect.atlas in Resources */,
 				967040D11C5335BD0014592F /* background.mp3 in Resources */,
-				964062B71C50C3B200A04F8A /* background_f0.png in Resources */,
-				964062B81C50C3B200A04F8A /* background_f1.png in Resources */,
 				967040D51C5335BD0014592F /* jump_from_platform.mp3 in Resources */,
 				96F24B631C50A245002551CC /* Main.storyboard in Resources */,
 				96F24BA21C50A3BB002551CC /* jump.atlas in Resources */,
 				967040D41C5335BD0014592F /* hit.mp3 in Resources */,
+				96E0DCDD1C8E7B090068AA03 /* background_f0.png in Resources */,
 				967040D01C5335BD0014592F /* apple.mp3 in Resources */,
 				967040D21C5335BD0014592F /* fly.mp3 in Resources */,
+				96E0DCDE1C8E7B090068AA03 /* background_f1.png in Resources */,
 				967040D31C5335BD0014592F /* hit_platform.mp3 in Resources */,
 				96F24BA51C50A3BB002551CC /* run.atlas in Resources */,
 				96F24BA41C50A3BB002551CC /* roll.atlas in Resources */,
